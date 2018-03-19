@@ -23,15 +23,15 @@ Svrha sistema koji se razvija jeste da omogući kako individualcima, tako i firm
 * Korisnik koji je kreirao projekat ima mogućnost da ga označi kao završenog i nakon toga svi učesnici projekta imaju pravo ocijeniti saradnju kao dobru ili lošu (putem points sistema), s tim da osoba koja je kreirala projekat može davati duple bodove
 
 ## Funkcionalnosti
-* Kreiranje profila
-* Prijava
-* Uređivanje profila
-* Pretraga korisnika po različitim kriterijima
-* Dodavanje korisnika u kontakte
+* Kreiranje profila, nakon čega korisnik dobija e-mail sa verifikacijskim kodom
+* Prijava - korisnik unosi e-mail adresu ili korisničko ime te šifru
+* Uređivanje profila - korisniku je omogućeno da promijeni šifru (nakon čega prima e-mail upozorenja), korisničko ime, sliku (pri čemu može birati da li će to biti korištenjem kamere ili odabirom datoteke), te e-mail adresu. Pored toga, omogućeno je dodavanje podataka pored postojećih, kao što su CV, opis profila, kodovi te tehnologije koje korisnik poznaje (pri čemu može birati iz liste ponuđenih tehnologija, ili napraviti proizvoljan unos)
+* Pretraga korisnika po različitim kriterijima - korisničko ime. e-mail adresa i tehnologije koje poznaje
+* Dodavanje korisnika u kontakte, pri čemu korisnik koji je primio zahtjev dobija notifikaciju
 * Kreiranje, uređivanje i brisanje projekta
-* Označavanje projekta kao završenog
-* Ocjenjivanje saradnje na projektu
-* Upravljanje korisnicima i aplikacijom od strane admina
+* Označavanje projekta kao završenog, pri čemu svi korisnici koji su učestvovali u izradi projekta dobijaju notifikaciju da je projekat završen i da trebaju ocijeniti ostale saradnike
+* Ocjenjivanje saradnje na projektu, pri čemu se svi saradnici međusobno ocjenjuju i osoba koja je kreirala projekat može davati duple bodove
+* Upravljanje korisnicima i aplikacijom od strane administratora - administrator upravlja sadržajem aplikacije tako što osigurava da se ne pojavljuje neprimjeren sadržaj, da nije moguće zloupotrebljavanje sistema (npr. da dva korisnika konstantno kreiraju zajedničke projekte bez koda i daju ocjene jedan drugom), da korisnici ne kreiraju lažne profile te da pri korištenju aplikacije ne dolazi do tehničkih problema (nemogućnost dodavanja projekta, kolaboratora itd.)
 
 ## Akteri
 * Administrator - nadgleda sve aktivnosti u sistemu
