@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="650e12ed-7348-4c0c-b0fb-626705c4b45f"
+    Name="5fc0c667-e916-475d-a208-fbbb221ec4a5"
     Publisher="CN=Hana"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="650e12ed-7348-4c0c-b0fb-626705c4b45f" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="5fc0c667-e916-475d-a208-fbbb221ec4a5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>MrezaZaProfesionalnoPovezivanje</DisplayName>

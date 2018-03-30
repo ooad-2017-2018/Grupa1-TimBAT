@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{DF8E3B75-0B52-46AB-8D71-935153B10DDA}</ProjectGuid>
+    <ProjectGuid>{BC62BB2F-9241-41F5-A9CB-37DC2AC3CE7A}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MrezaZaProfesionalnoPovezivanje</RootNamespace>
