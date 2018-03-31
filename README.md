@@ -1,5 +1,8 @@
 # Grupa1-TimBAT   
 
+
+
+
 ## Tema: Mreža za profesionalno povezivanje
 
 ## Članovi tima:
