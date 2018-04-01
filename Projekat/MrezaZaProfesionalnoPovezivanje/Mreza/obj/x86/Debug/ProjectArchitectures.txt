@@ -1,1 +1,1 @@
-D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\Mreza.csproj;x86
+D:\Adnan\Cetvrti semestar\OOAD\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\Mreza.csproj;x86
