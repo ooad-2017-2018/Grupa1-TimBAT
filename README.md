@@ -1,5 +1,8 @@
 # Grupa1-TimBAT   
 
+![alt text](https://raw.githubusercontent.com/ooad-2017-2018/Grupa1-TimBAT/master/logo2.jpg)
+
+
 ## Tema: Mreža za profesionalno povezivanje
 
 ## Članovi tima:
