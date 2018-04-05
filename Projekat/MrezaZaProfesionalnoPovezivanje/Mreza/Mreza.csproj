@@ -111,6 +111,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\backgroundImg.jpg" />
+    <Content Include="Assets\logo.jpg" />
+    <Content Include="Assets\pozadina.jpg" />
+    <Content Include="Assets\profilna.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\webcam.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

@@ -26,5 +26,31 @@ namespace Mreza
         {
             this.InitializeComponent();
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e) // za firmu
+        {
+
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e) // za privatni profil
+        {
+
+        }
+
+        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            nazivFirme_tb.Visibility = Visibility.Visible;
+            osnivanjeFirme_tekst.Visibility = Visibility.Visible;
+            imePrezime_tb.Visibility = Visibility.Collapsed;
+            rodjenje_tekst.Visibility = Visibility.Collapsed;
+        }
+
+        private void RadioButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            nazivFirme_tb.Visibility = Visibility.Collapsed;
+            osnivanjeFirme_tekst.Visibility = Visibility.Collapsed;
+            imePrezime_tb.Visibility = Visibility.Visible;
+            rodjenje_tekst.Visibility = Visibility.Visible;
+        }
     }
 }

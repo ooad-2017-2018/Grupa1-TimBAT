@@ -7,39 +7,65 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <RelativePanel Margin="0,0,6,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
-        <RelativePanel.RenderTransform>
-            <CompositeTransform SkewY="0.109" TranslateY="1.498"/>
-        </RelativePanel.RenderTransform>
-        <RelativePanel.Background>
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
+        <Grid.Background>
             <ImageBrush ImageSource="/Assets/pozadina.jpg"></ImageBrush>
-        </RelativePanel.Background>
-        <RelativePanel Background="White" Opacity="0.75" HorizontalAlignment="Left" Height="263" VerticalAlignment="Top" Width="1852" Margin="30,27,-1882,-290">
-            <Image Source="/Assets/logo.jpg" HorizontalAlignment="Left" Height="197" VerticalAlignment="Top" Width="554" Margin="159,38,-713,-215"/>
-            <TextBox HorizontalAlignment="Left" Height="32" PlaceholderText="Username" VerticalAlignment="Top" Width="253" Margin="1050,120,-1200,-168"/>
-            <PasswordBox HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="253" Margin="1350,120,-1617,-164" PlaceholderText="Password"/>
-            <Button Content="Log in" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="104" Margin="1650,120,-1731.469,-180.049"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Background="White" Opacity="0.75"></Border>
+        <Border Grid.Row="0" Grid.Column="1" Background="White" Opacity="0.75"></Border>
+        <Border Grid.Row="0" Grid.Column="2" Background="White" Opacity="0.75"></Border>
+        <Border Grid.Row="0" Grid.Column="3" Background="White" Opacity="0.75"></Border>
+        <Border Grid.Row="2" Grid.Column="0" Background="White" Opacity="0.75"></Border>
+        <Border Grid.Row="2" Grid.Column="1" Background="White" Opacity="0.75"></Border>
+        <Border Grid.Row="2" Grid.Column="2" Background="White" Opacity="0.75"></Border>
+        <Border Grid.Row="2" Grid.Column="3" Background="White" Opacity="0.75"></Border>
+        <Border Grid.Row="3" Grid.Column="0" Background="White" Opacity="0.75">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Content="Odaberi sliku" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
+                <Button Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="50">
+                    <Image Source="/Assets/webcam.png" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                </Button>
+            </Grid>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="1" Background="White" Opacity="0.75"></Border>
+        <Border Grid.Row="3" Grid.Column="2" Background="White" Opacity="0.75"></Border>
+        <Border Grid.Row="3" Grid.Column="3" Background="White" Opacity="0.75"></Border>
 
-        </RelativePanel>
-        <RelativePanel Background="White" Opacity="0.75" HorizontalAlignment="Left" Height="701" VerticalAlignment="Top" Width="1847" Margin="36,336,-1883,-1037">
-            <Image Source="/Assets/profilna.png" HorizontalAlignment="Left" Height="499" VerticalAlignment="Top" Width="543" Margin="264,43,-807,-542"/>
-            <Button Content="Odaberi sliku" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="200" Margin="361,585,-468,-615"/>
-            <RelativePanel HorizontalAlignment="Left" Height="91" VerticalAlignment="Top" Width="708" Margin="1015,32,-1347,-189" RenderTransformOrigin="0.5,0.5">
-                <RadioButton Content="Firma" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="168" Margin="190,53,-540,-73" IsChecked="True"/>
-                <RadioButton Content="Privatni profil" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="168" Margin="400,53,-540,-73"/>
-            </RelativePanel>
-            <TextBox HorizontalAlignment="Left" Height="32" PlaceholderText="Naziv firme" VerticalAlignment="Top" Width="500" Margin="1120,154,-828,-368"/>
-            <TextBox HorizontalAlignment="Left" Height="32" PlaceholderText="Korisničko ime (neobavezno)" VerticalAlignment="Top" Width="500" Margin="1120,294,-828,-368"/>
-            <TextBox HorizontalAlignment="Left" Height="32" PlaceholderText="E-mail adresa" VerticalAlignment="Top" Width="500" Margin="1120,364,-828,-368"/>
-            <TextBox HorizontalAlignment="Left" Height="32" PlaceholderText="Šifra" VerticalAlignment="Top" Width="500" Margin="1120,434,-828,-368"/>
-            <TextBox HorizontalAlignment="Left" Height="32" PlaceholderText="Potvrda šifre" VerticalAlignment="Top" Width="500" Margin="1120,504,-828,-368"/>
-            <Button Content="Registruj se" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="188" Margin="1284,583,-1047,-615"/>
-            <CalendarDatePicker HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="222" Margin="1397,220,-1050,-220"/>
-            <TextBlock HorizontalAlignment="Left" Height="32" Text="Datum osnivanja firme:" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Margin="1124,221,-843,-467"/>
+        <Image Source="/Assets/logo.jpg" Grid.Row="0" Grid.Column="0"></Image>
+        <TextBox Grid.Row="0" Grid.Column="1" PlaceholderText="Username" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20, 0, 20, 0"></TextBox>
+        <TextBox Grid.Row="0" Grid.Column="2" PlaceholderText="Password" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20, 0, 20, 0"></TextBox>
+        <Button Grid.Row="0" Grid.Column="3" Content="Log in" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20, 0, 20, 0" ></Button>
 
-
-        </RelativePanel>
-
-
-    </RelativePanel>
+        <Image Source="/Assets/profilna.png" Grid.Row="2" Grid.Column="0" Stretch="Uniform"/>
+        <RadioButton Content="Firma" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="25,15,0,0" IsChecked="True" Checked="RadioButton_Checked" Click="RadioButton_Click"></RadioButton>
+        <RadioButton Content="Privatni profil" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,15,0,0" Checked="RadioButton_Checked_1" Click="RadioButton_Click_1"></RadioButton>
+        <TextBox Name="nazivFirme_tb" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" PlaceholderText="Naziv firme" Margin="0, 50, 0, 0" Padding="60,3,60,0" />
+        <TextBox Name="imePrezime_tb" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" PlaceholderText="Ime i prezime" Margin="0, 50, 0, 0" Padding="60,3,60,0" Visibility="Collapsed"/>
+        <TextBlock Name="osnivanjeFirme_tekst" Text="Datum osnivanja firme: " Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,100,0,0"></TextBlock>
+        <TextBlock Name="rodjenje_tekst" Text="Datum rođenja: " Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,100,0,0" Visibility="Collapsed"></TextBlock>
+        <CalendarDatePicker Grid.Row="2" Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15,95,0,0"></CalendarDatePicker>
+        <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" PlaceholderText="Korisničko ime (neobavezno)" Margin="0, 140, 0, 0" Padding="60,3,60,0" />
+        <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" PlaceholderText="E-mail adresa" Margin="0, 185, 0, 0" Padding="60,3,60,0" />
+        <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" PlaceholderText="Šifra" Margin="0, 230, 0, 0" Padding="60,3,60,0" />
+        <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" PlaceholderText="Potvrda šifre" Margin="0, 275, 0, 0" Padding="60,3,60,0" />
+        <Button Content="Registruj se" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+    </Grid>
 </Page>

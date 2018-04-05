@@ -25569,18 +25569,18 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Adnan\\.nuget\\packages\\": {},
+    "C:\\Users\\Hana\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Adnan\\Cetvrti semestar\\OOAD\\GitHub\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
+      "projectUniqueName": "C:\\Users\\Hana\\Desktop\\OOAD projekat\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
       "projectName": "Mreza",
-      "projectPath": "D:\\Adnan\\Cetvrti semestar\\OOAD\\GitHub\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
-      "packagesPath": "C:\\Users\\Adnan\\.nuget\\packages\\",
-      "outputPath": "D:\\Adnan\\Cetvrti semestar\\OOAD\\GitHub\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\obj\\",
+      "projectPath": "C:\\Users\\Hana\\Desktop\\OOAD projekat\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
+      "packagesPath": "C:\\Users\\Hana\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hana\\Desktop\\OOAD projekat\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -25588,7 +25588,7 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Adnan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hana\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
