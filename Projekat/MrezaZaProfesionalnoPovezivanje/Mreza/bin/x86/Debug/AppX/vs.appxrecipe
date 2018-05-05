@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-05T09:15:05.782</Modified>
+      <Modified>2018-05-05T12:01:17.369</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Mreza.exe">
       <PackagePath>entrypoint\Mreza.exe</PackagePath>
-      <Modified>2018-05-05T09:15:04.844</Modified>
+      <Modified>2018-05-05T12:01:16.473</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\teske\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -555,7 +555,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Mreza.xr.xml">
       <PackagePath>Mreza.xr.xml</PackagePath>
-      <Modified>2018-04-09T18:02:38.254</Modified>
+      <Modified>2018-05-05T11:56:13.617</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -564,11 +564,11 @@
     <AppxPackagedFile Include="D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-05T09:13:37.564</Modified>
+      <Modified>2018-05-05T12:01:16.968</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Core\Mreza.exe">
       <PackagePath>Mreza.exe</PackagePath>
-      <Modified>2018-05-05T09:15:05.766</Modified>
+      <Modified>2018-05-05T12:01:17.365</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

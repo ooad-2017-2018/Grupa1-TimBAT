@@ -7,50 +7,131 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Page.Resources>
-        <ImageBrush x:Name="myXAMLImageElement" ImageSource="ms-appx:///Assets/backgroundImg.jpg" />
-    </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
         <Pivot>
-            <PivotItem Header="Brisanje korisnika" Background="{ThemeResource myXAMLImageElement}">
+            <PivotItem>
+                <PivotItem.Header>
+                    <TextBlock FontWeight="Bold" FontStyle="Oblique" Text="Brisanje Korisnika"/>
+                </PivotItem.Header>
                 <Grid>
-                    <RelativePanel HorizontalAlignment="Left" Height="900" Margin="550,50,0,0" VerticalAlignment="Top" Width="700">
-                        <RelativePanel.Background>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/pozadina.jpg"></ImageBrush>
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="1" Grid.Column="1" Background="White" Opacity="0.75"></Border>
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.2*"></RowDefinition>
+                            <RowDefinition Height="0.8*"></RowDefinition>
+                            <RowDefinition Height="0.2*"></RowDefinition>
+                            <RowDefinition Height="5*"></RowDefinition>
+                            <RowDefinition Height="0.2*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="20" Text="" VerticalAlignment="Center" PlaceholderText="Ime korisnika"/>
+                        <ListView Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Width="200" MinHeight="250" Height="Auto" VerticalAlignment="Center" BorderThickness="1" BorderBrush="Black"/>
+                        <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="20" Text="" VerticalAlignment="Center" PlaceholderText="Razlog brisanja" />
+                        <Button Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="50" VerticalAlignment="Center" Content="Obriši"/>
+                    </Grid>
+                    </Grid>
+            </PivotItem>
+            <PivotItem>
+                <PivotItem.Header>
+                    <TextBlock FontWeight="Bold" FontStyle="Oblique" Text="Brisanje Projekata"/>
+                </PivotItem.Header>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/pozadina.jpg"></ImageBrush>
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                        <RowDefinition Height="0.8*"></RowDefinition>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="3" Grid.Column="1">
+                        <Grid.Background>
                             <SolidColorBrush Color="White" Opacity="0.8" />
-                        </RelativePanel.Background>
-                        <TextBox HorizontalAlignment="Left" Width="200" Height="20" Margin="250,150,0,0" Text="" VerticalAlignment="Top" PlaceholderText="Ime korisnika"/>
-                        <ListView HorizontalAlignment="Left" Width="200" Height="350" Margin="250,200,0,0" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
-                        <TextBox HorizontalAlignment="Left" Width="200" Height="20" Margin="250, 570, 0, 0" Text="" VerticalAlignment="Top" PlaceholderText="Razlog brisanja" />
-                        <Button HorizontalAlignment="Left" Width="200" Height="50" Margin="250, 620, 0, 0" VerticalAlignment="Top" Content="Obriši"/>
-                    </RelativePanel>
+                        </Grid.Background>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.2*"></RowDefinition>
+                            <RowDefinition Height="0.8*"></RowDefinition>
+                            <RowDefinition Height="0.2*"></RowDefinition>
+                            <RowDefinition Height="5*"></RowDefinition>
+                            <RowDefinition Height="0.2*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="20" Text="" VerticalAlignment="Center" PlaceholderText="Autor projekta"/>
+                        <ListView Grid.Row="3" Grid.Column="1" Name="AutoriProjekta" HorizontalAlignment="Center" Width="200" MinHeight="250" VerticalAlignment="Center" BorderThickness="1" BorderBrush="Black"/>
+                        <ListView Grid.Row="3" Grid.Column="3" Name="Projekti" HorizontalAlignment="Center" Width="200" MinHeight="250" VerticalAlignment="Center" BorderThickness="1" BorderBrush="Black"/>
+                        <TextBox Grid.Row="5" Grid.Column="3" HorizontalAlignment="Center" Width="200" Height="20" Text="" VerticalAlignment="Center" PlaceholderText="Razlog brisanja" />
+                        <Button Grid.Row="6" Grid.Column="3" HorizontalAlignment="Center" Width="200" Height="50" VerticalAlignment="Center" Content="Obriši"/>
+                    </Grid>
                 </Grid>
             </PivotItem>
-            <PivotItem Header="Brisanje projekata" Background="{ThemeResource myXAMLImageElement}">
+            <PivotItem>
+                <PivotItem.Header>
+                    <TextBlock FontWeight="Bold" FontStyle="Oblique" Text="Poruke"/>
+                </PivotItem.Header>
                 <Grid>
-                    <RelativePanel HorizontalAlignment="Left" Height="900" Margin="550,50,0,0" VerticalAlignment="Top" Width="700">
-                        <RelativePanel.Background>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/pozadina.jpg"></ImageBrush>
+                    </Grid.Background>
+                    <Grid Grid.Row="3" Grid.Column="1">
+                        <Grid.Background>
                             <SolidColorBrush Color="White" Opacity="0.8" />
-                        </RelativePanel.Background>
-                        <TextBox HorizontalAlignment="Left" Width="200" Height="20" Margin="140,150,0,0" Text="" VerticalAlignment="Top" PlaceholderText="Autor projekta"/>
-                        <ListView Name="AutoriProjekta" HorizontalAlignment="Left" Width="200" Height="350" Margin="140,200,0,0" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
-                        <ListView Name="Projekti" HorizontalAlignment="Left" Width="200" Height="350" Margin="360,200,0,0" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
-                        <TextBox HorizontalAlignment="Left" Width="200" Height="20" Margin="360, 570, 0, 0" Text="" VerticalAlignment="Top" PlaceholderText="Razlog brisanja" />
-                        <Button HorizontalAlignment="Left" Width="200" Height="50" Margin="360, 620, 0, 0" VerticalAlignment="Top" Content="Obriši"/>
-                    </RelativePanel>
-                </Grid>
-            </PivotItem>
-            <PivotItem Header="Poruke" Background="{ThemeResource myXAMLImageElement}">
-                <Grid>
-                    <RelativePanel HorizontalAlignment="Left" Height="940" Margin="25,25,0,0" VerticalAlignment="Top" Width="1850">
-                        <RelativePanel.Background>
-                            <SolidColorBrush Color="White" Opacity="0.8" />
-                        </RelativePanel.Background>
-                        <ListView HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="900" Margin="20,20,0,0" BorderThickness="1" BorderBrush="Black" />
-                        <ListView HorizontalAlignment="Left" VerticalAlignment="Top" Width="1400" Height="770" Margin="440,20,0,0" BorderThickness="1" BorderBrush="Black"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="1220" Height="100" Margin="440, 820, 0, 0" AcceptsReturn="True"/>
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="100" Margin="1680, 820, 0, 0" Content="Pošalji" FontSize="24"/>
-                    </RelativePanel>
+                        </Grid.Background>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.55*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.1*"></RowDefinition>
+                            <RowDefinition Height="3*"></RowDefinition>
+                            <RowDefinition Height="0.1*"></RowDefinition>
+                            <RowDefinition Height="0.5*"></RowDefinition>
+                            <RowDefinition Height="0.1*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ListView Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="550" BorderThickness="1" BorderBrush="Black" />
+                        <ListView Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="750" Height="550" BorderThickness="1" BorderBrush="Black"/>
+                        <TextBox Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="750" Height="100" AcceptsReturn="True"/>
+                        <Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Height="100" Content="Pošalji" FontSize="24"/>
+                    </Grid>
                 </Grid>
             </PivotItem>
         </Pivot>
