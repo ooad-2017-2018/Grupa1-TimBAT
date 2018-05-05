@@ -92,6 +92,14 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Model\BatNet.cs" />
+    <Compile Include="Model\Firma.cs" />
+    <Compile Include="Model\Korisnik.cs" />
+    <Compile Include="Model\Notifikacija.cs" />
+    <Compile Include="Model\ObicniKorisnik.cs" />
+    <Compile Include="Model\Poruka.cs" />
+    <Compile Include="Model\Projekat.cs" />
+    <Compile Include="Model\Tehnologija.cs" />
     <Compile Include="View\AdminPanelView.xaml.cs">
       <DependentUpon>AdminPanelView.xaml</DependentUpon>
     </Compile>

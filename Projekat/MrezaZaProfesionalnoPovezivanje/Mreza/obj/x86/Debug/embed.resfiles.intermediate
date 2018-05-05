@@ -1,3 +1,3 @@
-AdminPanel.xbf
 App.xbf
-MainPage.xbf
+View\AdminPanelView.xbf
+View\MainPage.xbf
