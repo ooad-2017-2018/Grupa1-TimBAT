@@ -651,3 +651,9 @@ C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoP
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Assets\profilna.png
+D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Assets\profilna.png
+D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\AdminPanel.xbf
+D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\AdminPanel.g.i.cs
+D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\AdminPanel.g.cs
+D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\AdminPanel.xaml
+D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\AdminPanel.xbf
