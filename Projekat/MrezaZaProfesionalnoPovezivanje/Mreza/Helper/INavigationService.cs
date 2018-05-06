@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KompShopMVVM.KompShop.Helper
+namespace Mreza.Helper
 {
     interface INavigationService
     {

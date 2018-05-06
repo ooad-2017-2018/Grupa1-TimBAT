@@ -133,16 +133,16 @@ namespace Mreza.Mreza_XamlTypeInfo
         private void InitTypeTables()
         {
             _typeNameTable = new string[4];
-            _typeNameTable[0] = "Mreza.AdminPanel";
+            _typeNameTable[0] = "Mreza.View.AdminPanel";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Mreza.MainPage";
+            _typeNameTable[3] = "Mreza.View.MainPage";
 
             _typeTable = new global::System.Type[4];
-            _typeTable[0] = typeof(global::Mreza.AdminPanel);
+            _typeTable[0] = typeof(global::Mreza.View.AdminPanel);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::Mreza.MainPage);
+            _typeTable[3] = typeof(global::Mreza.View.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -177,8 +177,8 @@ namespace Mreza.Mreza_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_AdminPanel() { return new global::Mreza.AdminPanel(); }
-        private object Activate_3_MainPage() { return new global::Mreza.MainPage(); }
+        private object Activate_0_AdminPanel() { return new global::Mreza.View.AdminPanel(); }
+        private object Activate_3_MainPage() { return new global::Mreza.View.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -190,7 +190,7 @@ namespace Mreza.Mreza_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Mreza.AdminPanel
+            case 0:   //  Mreza.View.AdminPanel
                 userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_AdminPanel;
                 userType.SetIsLocalType();
@@ -205,7 +205,7 @@ namespace Mreza.Mreza_XamlTypeInfo
                 xamlType = new global::Mreza.Mreza_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Mreza.MainPage
+            case 3:   //  Mreza.View.MainPage
                 userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_3_MainPage;
                 userType.SetIsLocalType();

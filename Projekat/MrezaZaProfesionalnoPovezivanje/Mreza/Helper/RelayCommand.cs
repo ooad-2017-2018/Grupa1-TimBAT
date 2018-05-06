@@ -5,9 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace KompShopMVVM.KompShop.Helper
+namespace Mreza.Helper
 {
-    //Standardna relaycommand klasa koja se reuse u MVVM
     public class RelayCommand<T> : ICommand
     {
         private readonly Func<T, bool> _canExecuteMethod;

@@ -93,6 +93,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Helper\INavigationService.cs" />
+    <Compile Include="Helper\NavigationService.cs" />
+    <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="Model\BatNet.cs" />
     <Compile Include="Model\Firma.cs" />
     <Compile Include="Model\Korisnik.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="Model\Poruka.cs" />
     <Compile Include="Model\Projekat.cs" />
     <Compile Include="Model\Tehnologija.cs" />
+    <Compile Include="ViewModel\AdministratorViewModel.cs" />
     <Compile Include="View\AdminPanelView.xaml.cs">
       <DependentUpon>AdminPanelView.xaml</DependentUpon>
     </Compile>

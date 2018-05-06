@@ -1003,7 +1003,6 @@ D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Sy
 D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\System.Xml.XDocument.dll
 D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\System.Xml.XmlDocument.dll
 D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\System.Xml.XmlSerializer.dll
-D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Mreza.csprojResolveAssemblyReference.cache
 D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\App.g.i.cs
 D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\App.g.cs
 D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\View\AdminPanelView.g.i.cs
