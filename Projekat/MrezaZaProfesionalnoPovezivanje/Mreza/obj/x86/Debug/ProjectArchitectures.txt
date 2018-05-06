@@ -1,1 +1,1 @@
-C:\Users\Hana\Desktop\OOAD\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\Mreza.csproj;x86
+D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\Mreza.csproj;x86

@@ -92,6 +92,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Helper\INavigationService.cs" />
     <Compile Include="Model\BatNet.cs" />
     <Compile Include="Model\Firma.cs" />
     <Compile Include="Model\Korisnik.cs" />
