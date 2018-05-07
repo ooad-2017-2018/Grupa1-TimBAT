@@ -132,17 +132,61 @@ namespace Mreza.Mreza_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
-            _typeNameTable[0] = "Mreza.View.AdminPanel";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Mreza.View.MainPage";
+            _typeNameTable = new string[26];
+            _typeNameTable[0] = "Mreza.ViewModel.AdministratorViewModel";
+            _typeNameTable[1] = "Object";
+            _typeNameTable[2] = "System.Windows.Input.ICommand";
+            _typeNameTable[3] = "System.Collections.Generic.List`1<Mreza.Model.Korisnik>";
+            _typeNameTable[4] = "Mreza.Model.Korisnik";
+            _typeNameTable[5] = "String";
+            _typeNameTable[6] = "Windows.UI.Xaml.Media.ImageSource";
+            _typeNameTable[7] = "System.Collections.Generic.List`1<String>";
+            _typeNameTable[8] = "Int32";
+            _typeNameTable[9] = "System.Collections.Generic.List`1<Mreza.Model.Tehnologija>";
+            _typeNameTable[10] = "Mreza.Model.Tehnologija";
+            _typeNameTable[11] = "Mreza.Model.TipTehnologije";
+            _typeNameTable[12] = "System.Enum";
+            _typeNameTable[13] = "System.ValueType";
+            _typeNameTable[14] = "System.Collections.Generic.List`1<Mreza.Model.Notifikacija>";
+            _typeNameTable[15] = "Mreza.Model.Notifikacija";
+            _typeNameTable[16] = "System.DateTime";
+            _typeNameTable[17] = "System.Collections.Generic.List`1<Mreza.Model.Poruka>";
+            _typeNameTable[18] = "Mreza.Model.Poruka";
+            _typeNameTable[19] = "System.Collections.Generic.List`1<Mreza.Model.Projekat>";
+            _typeNameTable[20] = "Mreza.Model.Projekat";
+            _typeNameTable[21] = "Boolean";
+            _typeNameTable[22] = "Mreza.View.AdminPanel";
+            _typeNameTable[23] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[24] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[25] = "Mreza.View.MainPage";
 
-            _typeTable = new global::System.Type[4];
-            _typeTable[0] = typeof(global::Mreza.View.AdminPanel);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::Mreza.View.MainPage);
+            _typeTable = new global::System.Type[26];
+            _typeTable[0] = typeof(global::Mreza.ViewModel.AdministratorViewModel);
+            _typeTable[1] = typeof(global::System.Object);
+            _typeTable[2] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[3] = typeof(global::System.Collections.Generic.List<global::Mreza.Model.Korisnik>);
+            _typeTable[4] = typeof(global::Mreza.Model.Korisnik);
+            _typeTable[5] = typeof(global::System.String);
+            _typeTable[6] = typeof(global::Windows.UI.Xaml.Media.ImageSource);
+            _typeTable[7] = typeof(global::System.Collections.Generic.List<global::System.String>);
+            _typeTable[8] = typeof(global::System.Int32);
+            _typeTable[9] = typeof(global::System.Collections.Generic.List<global::Mreza.Model.Tehnologija>);
+            _typeTable[10] = typeof(global::Mreza.Model.Tehnologija);
+            _typeTable[11] = typeof(global::Mreza.Model.TipTehnologije);
+            _typeTable[12] = typeof(global::System.Enum);
+            _typeTable[13] = typeof(global::System.ValueType);
+            _typeTable[14] = typeof(global::System.Collections.Generic.List<global::Mreza.Model.Notifikacija>);
+            _typeTable[15] = typeof(global::Mreza.Model.Notifikacija);
+            _typeTable[16] = typeof(global::System.DateTime);
+            _typeTable[17] = typeof(global::System.Collections.Generic.List<global::Mreza.Model.Poruka>);
+            _typeTable[18] = typeof(global::Mreza.Model.Poruka);
+            _typeTable[19] = typeof(global::System.Collections.Generic.List<global::Mreza.Model.Projekat>);
+            _typeTable[20] = typeof(global::Mreza.Model.Projekat);
+            _typeTable[21] = typeof(global::System.Boolean);
+            _typeTable[22] = typeof(global::Mreza.View.AdminPanel);
+            _typeTable[23] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[24] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[25] = typeof(global::Mreza.View.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -177,8 +221,51 @@ namespace Mreza.Mreza_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_AdminPanel() { return new global::Mreza.View.AdminPanel(); }
-        private object Activate_3_MainPage() { return new global::Mreza.View.MainPage(); }
+        private object Activate_0_AdministratorViewModel() { return new global::Mreza.ViewModel.AdministratorViewModel(); }
+        private object Activate_3_List() { return new global::System.Collections.Generic.List<global::Mreza.Model.Korisnik>(); }
+        private object Activate_7_List() { return new global::System.Collections.Generic.List<global::System.String>(); }
+        private object Activate_9_List() { return new global::System.Collections.Generic.List<global::Mreza.Model.Tehnologija>(); }
+        private object Activate_14_List() { return new global::System.Collections.Generic.List<global::Mreza.Model.Notifikacija>(); }
+        private object Activate_17_List() { return new global::System.Collections.Generic.List<global::Mreza.Model.Poruka>(); }
+        private object Activate_19_List() { return new global::System.Collections.Generic.List<global::Mreza.Model.Projekat>(); }
+        private object Activate_22_AdminPanel() { return new global::Mreza.View.AdminPanel(); }
+        private object Activate_25_MainPage() { return new global::Mreza.View.MainPage(); }
+        private void VectorAdd_3_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Mreza.Model.Korisnik>)instance;
+            var newItem = (global::Mreza.Model.Korisnik)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_7_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::System.String>)instance;
+            var newItem = (global::System.String)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_9_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Mreza.Model.Tehnologija>)instance;
+            var newItem = (global::Mreza.Model.Tehnologija)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_14_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Mreza.Model.Notifikacija>)instance;
+            var newItem = (global::Mreza.Model.Notifikacija)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_17_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Mreza.Model.Poruka>)instance;
+            var newItem = (global::Mreza.Model.Poruka)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_19_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Mreza.Model.Projekat>)instance;
+            var newItem = (global::Mreza.Model.Projekat)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -190,24 +277,194 @@ namespace Mreza.Mreza_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Mreza.View.AdminPanel
-                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_AdminPanel;
+            case 0:   //  Mreza.ViewModel.AdministratorViewModel
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_0_AdministratorViewModel;
+                userType.AddMemberName("ObrisiKorisnika");
+                userType.AddMemberName("ObrisiProjekat");
+                userType.AddMemberName("PosaljiPoruku");
+                userType.AddMemberName("Korisnici");
+                userType.AddMemberName("Projekti");
+                userType.AddMemberName("Kor");
+                userType.AddMemberName("Pro");
+                userType.AddMemberName("Por");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Page
+            case 1:   //  Object
                 xamlType = new global::Mreza.Mreza_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
+            case 2:   //  System.Windows.Input.ICommand
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 3:   //  System.Collections.Generic.List`1<Mreza.Model.Korisnik>
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_3_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Mreza.Model.Korisnik
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("EMail");
+                userType.AddMemberName("KorisnickoIme");
+                userType.AddMemberName("Password");
+                userType.AddMemberName("Slika");
+                userType.AddMemberName("OpisProfila");
+                userType.AddMemberName("Kodovi");
+                userType.AddMemberName("GithubLink");
+                userType.AddMemberName("Bodovi");
+                userType.AddMemberName("Kontakti");
+                userType.AddMemberName("Tehnologije");
+                userType.AddMemberName("Notifikacije");
+                userType.AddMemberName("Poruke");
+                userType.AddMemberName("Projekti");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  String
                 xamlType = new global::Mreza.Mreza_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Mreza.View.MainPage
+            case 6:   //  Windows.UI.Xaml.Media.ImageSource
+                xamlType = new global::Mreza.Mreza_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  System.Collections.Generic.List`1<String>
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_7_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 8:   //  Int32
+                xamlType = new global::Mreza.Mreza_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 9:   //  System.Collections.Generic.List`1<Mreza.Model.Tehnologija>
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_9_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 10:   //  Mreza.Model.Tehnologija
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("Naziv");
+                userType.AddMemberName("TipTehnologije");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 11:   //  Mreza.Model.TipTehnologije
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.AddEnumValue("ProgramskiJezik", global::Mreza.Model.TipTehnologije.ProgramskiJezik);
+                userType.AddEnumValue("Framework", global::Mreza.Model.TipTehnologije.Framework);
+                userType.AddEnumValue("BazaPodataka", global::Mreza.Model.TipTehnologije.BazaPodataka);
+                userType.AddEnumValue("IDE", global::Mreza.Model.TipTehnologije.IDE);
+                userType.AddEnumValue("TypeSetting", global::Mreza.Model.TipTehnologije.TypeSetting);
+                userType.AddEnumValue("OperativniSisem", global::Mreza.Model.TipTehnologije.OperativniSisem);
+                userType.AddEnumValue("MobilnoProgramiranje", global::Mreza.Model.TipTehnologije.MobilnoProgramiranje);
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 12:   //  System.Enum
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                xamlType = userType;
+                break;
+
+            case 13:   //  System.ValueType
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 14:   //  System.Collections.Generic.List`1<Mreza.Model.Notifikacija>
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_14_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 15:   //  Mreza.Model.Notifikacija
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("Sadrzaj");
+                userType.AddMemberName("Datum");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 16:   //  System.DateTime
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 17:   //  System.Collections.Generic.List`1<Mreza.Model.Poruka>
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_17_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 18:   //  Mreza.Model.Poruka
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("SadrzajPoruke");
+                userType.AddMemberName("Autor");
+                userType.AddMemberName("DatumSlanja");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 19:   //  System.Collections.Generic.List`1<Mreza.Model.Projekat>
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_19_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 20:   //  Mreza.Model.Projekat
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("Naslov");
+                userType.AddMemberName("Autor");
+                userType.AddMemberName("Kolaboratori");
+                userType.AddMemberName("Opis");
+                userType.AddMemberName("DatumKreiranja");
+                userType.AddMemberName("DatumZavrsetka");
+                userType.AddMemberName("Tehnologije");
+                userType.AddMemberName("Aktivan");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 21:   //  Boolean
+                xamlType = new global::Mreza.Mreza_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 22:   //  Mreza.View.AdminPanel
                 userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_MainPage;
+                userType.Activator = Activate_22_AdminPanel;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 23:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::Mreza.Mreza_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 24:   //  Windows.UI.Xaml.Controls.UserControl
+                xamlType = new global::Mreza.Mreza_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 25:   //  Mreza.View.MainPage
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_25_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -216,11 +473,591 @@ namespace Mreza.Mreza_XamlTypeInfo
         }
 
 
+        private object get_0_AdministratorViewModel_ObrisiKorisnika(object instance)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            return that.ObrisiKorisnika;
+        }
+        private void set_0_AdministratorViewModel_ObrisiKorisnika(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            that.ObrisiKorisnika = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_1_AdministratorViewModel_ObrisiProjekat(object instance)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            return that.ObrisiProjekat;
+        }
+        private void set_1_AdministratorViewModel_ObrisiProjekat(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            that.ObrisiProjekat = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_2_AdministratorViewModel_PosaljiPoruku(object instance)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            return that.PosaljiPoruku;
+        }
+        private void set_2_AdministratorViewModel_PosaljiPoruku(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            that.PosaljiPoruku = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_3_AdministratorViewModel_Korisnici(object instance)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            return that.Korisnici;
+        }
+        private void set_3_AdministratorViewModel_Korisnici(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            that.Korisnici = (global::System.Collections.Generic.List<global::Mreza.Model.Korisnik>)Value;
+        }
+        private object get_4_Korisnik_EMail(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.EMail;
+        }
+        private void set_4_Korisnik_EMail(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.EMail = (global::System.String)Value;
+        }
+        private object get_5_Korisnik_KorisnickoIme(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.KorisnickoIme;
+        }
+        private void set_5_Korisnik_KorisnickoIme(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.KorisnickoIme = (global::System.String)Value;
+        }
+        private object get_6_Korisnik_Password(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.Password;
+        }
+        private void set_6_Korisnik_Password(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.Password = (global::System.String)Value;
+        }
+        private object get_7_Korisnik_Slika(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.Slika;
+        }
+        private void set_7_Korisnik_Slika(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.Slika = (global::Windows.UI.Xaml.Media.ImageSource)Value;
+        }
+        private object get_8_Korisnik_OpisProfila(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.OpisProfila;
+        }
+        private void set_8_Korisnik_OpisProfila(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.OpisProfila = (global::System.String)Value;
+        }
+        private object get_9_Korisnik_Kodovi(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.Kodovi;
+        }
+        private void set_9_Korisnik_Kodovi(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.Kodovi = (global::System.Collections.Generic.List<global::System.String>)Value;
+        }
+        private object get_10_Korisnik_GithubLink(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.GithubLink;
+        }
+        private void set_10_Korisnik_GithubLink(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.GithubLink = (global::System.String)Value;
+        }
+        private object get_11_Korisnik_Bodovi(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.Bodovi;
+        }
+        private void set_11_Korisnik_Bodovi(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.Bodovi = (global::System.Int32)Value;
+        }
+        private object get_12_Korisnik_Kontakti(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.Kontakti;
+        }
+        private void set_12_Korisnik_Kontakti(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.Kontakti = (global::System.Collections.Generic.List<global::Mreza.Model.Korisnik>)Value;
+        }
+        private object get_13_Korisnik_Tehnologije(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.Tehnologije;
+        }
+        private void set_13_Korisnik_Tehnologije(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.Tehnologije = (global::System.Collections.Generic.List<global::Mreza.Model.Tehnologija>)Value;
+        }
+        private object get_14_Tehnologija_Naziv(object instance)
+        {
+            var that = (global::Mreza.Model.Tehnologija)instance;
+            return that.Naziv;
+        }
+        private void set_14_Tehnologija_Naziv(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Tehnologija)instance;
+            that.Naziv = (global::System.String)Value;
+        }
+        private object get_15_Tehnologija_TipTehnologije(object instance)
+        {
+            var that = (global::Mreza.Model.Tehnologija)instance;
+            return that.TipTehnologije;
+        }
+        private void set_15_Tehnologija_TipTehnologije(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Tehnologija)instance;
+            that.TipTehnologije = (global::Mreza.Model.TipTehnologije)Value;
+        }
+        private object get_16_Korisnik_Notifikacije(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.Notifikacije;
+        }
+        private void set_16_Korisnik_Notifikacije(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.Notifikacije = (global::System.Collections.Generic.List<global::Mreza.Model.Notifikacija>)Value;
+        }
+        private object get_17_Notifikacija_Sadrzaj(object instance)
+        {
+            var that = (global::Mreza.Model.Notifikacija)instance;
+            return that.Sadrzaj;
+        }
+        private void set_17_Notifikacija_Sadrzaj(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Notifikacija)instance;
+            that.Sadrzaj = (global::System.String)Value;
+        }
+        private object get_18_Notifikacija_Datum(object instance)
+        {
+            var that = (global::Mreza.Model.Notifikacija)instance;
+            return that.Datum;
+        }
+        private void set_18_Notifikacija_Datum(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Notifikacija)instance;
+            that.Datum = (global::System.DateTime)Value;
+        }
+        private object get_19_Korisnik_Poruke(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.Poruke;
+        }
+        private void set_19_Korisnik_Poruke(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.Poruke = (global::System.Collections.Generic.List<global::Mreza.Model.Poruka>)Value;
+        }
+        private object get_20_Poruka_SadrzajPoruke(object instance)
+        {
+            var that = (global::Mreza.Model.Poruka)instance;
+            return that.SadrzajPoruke;
+        }
+        private void set_20_Poruka_SadrzajPoruke(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Poruka)instance;
+            that.SadrzajPoruke = (global::System.String)Value;
+        }
+        private object get_21_Poruka_Autor(object instance)
+        {
+            var that = (global::Mreza.Model.Poruka)instance;
+            return that.Autor;
+        }
+        private void set_21_Poruka_Autor(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Poruka)instance;
+            that.Autor = (global::Mreza.Model.Korisnik)Value;
+        }
+        private object get_22_Poruka_DatumSlanja(object instance)
+        {
+            var that = (global::Mreza.Model.Poruka)instance;
+            return that.DatumSlanja;
+        }
+        private void set_22_Poruka_DatumSlanja(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Poruka)instance;
+            that.DatumSlanja = (global::System.DateTime)Value;
+        }
+        private object get_23_Korisnik_Projekti(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.Projekti;
+        }
+        private void set_23_Korisnik_Projekti(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.Projekti = (global::System.Collections.Generic.List<global::Mreza.Model.Projekat>)Value;
+        }
+        private object get_24_Projekat_Naslov(object instance)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            return that.Naslov;
+        }
+        private void set_24_Projekat_Naslov(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            that.Naslov = (global::System.String)Value;
+        }
+        private object get_25_Projekat_Autor(object instance)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            return that.Autor;
+        }
+        private void set_25_Projekat_Autor(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            that.Autor = (global::Mreza.Model.Korisnik)Value;
+        }
+        private object get_26_Projekat_Kolaboratori(object instance)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            return that.Kolaboratori;
+        }
+        private void set_26_Projekat_Kolaboratori(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            that.Kolaboratori = (global::System.Collections.Generic.List<global::Mreza.Model.Korisnik>)Value;
+        }
+        private object get_27_Projekat_Opis(object instance)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            return that.Opis;
+        }
+        private void set_27_Projekat_Opis(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            that.Opis = (global::System.String)Value;
+        }
+        private object get_28_Projekat_DatumKreiranja(object instance)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            return that.DatumKreiranja;
+        }
+        private void set_28_Projekat_DatumKreiranja(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            that.DatumKreiranja = (global::System.DateTime)Value;
+        }
+        private object get_29_Projekat_DatumZavrsetka(object instance)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            return that.DatumZavrsetka;
+        }
+        private void set_29_Projekat_DatumZavrsetka(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            that.DatumZavrsetka = (global::System.DateTime)Value;
+        }
+        private object get_30_Projekat_Tehnologije(object instance)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            return that.Tehnologije;
+        }
+        private void set_30_Projekat_Tehnologije(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            that.Tehnologije = (global::System.Collections.Generic.List<global::Mreza.Model.Tehnologija>)Value;
+        }
+        private object get_31_Projekat_Aktivan(object instance)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            return that.Aktivan;
+        }
+        private void set_31_Projekat_Aktivan(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            that.Aktivan = (global::System.Boolean)Value;
+        }
+        private object get_32_AdministratorViewModel_Projekti(object instance)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            return that.Projekti;
+        }
+        private void set_32_AdministratorViewModel_Projekti(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            that.Projekti = (global::System.Collections.Generic.List<global::Mreza.Model.Projekat>)Value;
+        }
+        private object get_33_AdministratorViewModel_Kor(object instance)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            return that.Kor;
+        }
+        private void set_33_AdministratorViewModel_Kor(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            that.Kor = (global::Mreza.Model.Korisnik)Value;
+        }
+        private object get_34_AdministratorViewModel_Pro(object instance)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            return that.Pro;
+        }
+        private void set_34_AdministratorViewModel_Pro(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            that.Pro = (global::Mreza.Model.Projekat)Value;
+        }
+        private object get_35_AdministratorViewModel_Por(object instance)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            return that.Por;
+        }
+        private void set_35_AdministratorViewModel_Por(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
+            that.Por = (global::Mreza.Model.Poruka)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::Mreza.Mreza_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::Mreza.Mreza_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "Mreza.ViewModel.AdministratorViewModel.ObrisiKorisnika":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "ObrisiKorisnika", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_0_AdministratorViewModel_ObrisiKorisnika;
+                xamlMember.Setter = set_0_AdministratorViewModel_ObrisiKorisnika;
+                break;
+            case "Mreza.ViewModel.AdministratorViewModel.ObrisiProjekat":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "ObrisiProjekat", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_1_AdministratorViewModel_ObrisiProjekat;
+                xamlMember.Setter = set_1_AdministratorViewModel_ObrisiProjekat;
+                break;
+            case "Mreza.ViewModel.AdministratorViewModel.PosaljiPoruku":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "PosaljiPoruku", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_2_AdministratorViewModel_PosaljiPoruku;
+                xamlMember.Setter = set_2_AdministratorViewModel_PosaljiPoruku;
+                break;
+            case "Mreza.ViewModel.AdministratorViewModel.Korisnici":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Korisnici", "System.Collections.Generic.List`1<Mreza.Model.Korisnik>");
+                xamlMember.Getter = get_3_AdministratorViewModel_Korisnici;
+                xamlMember.Setter = set_3_AdministratorViewModel_Korisnici;
+                break;
+            case "Mreza.Model.Korisnik.EMail":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "EMail", "String");
+                xamlMember.Getter = get_4_Korisnik_EMail;
+                xamlMember.Setter = set_4_Korisnik_EMail;
+                break;
+            case "Mreza.Model.Korisnik.KorisnickoIme":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "KorisnickoIme", "String");
+                xamlMember.Getter = get_5_Korisnik_KorisnickoIme;
+                xamlMember.Setter = set_5_Korisnik_KorisnickoIme;
+                break;
+            case "Mreza.Model.Korisnik.Password":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Password", "String");
+                xamlMember.Getter = get_6_Korisnik_Password;
+                xamlMember.Setter = set_6_Korisnik_Password;
+                break;
+            case "Mreza.Model.Korisnik.Slika":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Slika", "Windows.UI.Xaml.Media.ImageSource");
+                xamlMember.Getter = get_7_Korisnik_Slika;
+                xamlMember.Setter = set_7_Korisnik_Slika;
+                break;
+            case "Mreza.Model.Korisnik.OpisProfila":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "OpisProfila", "String");
+                xamlMember.Getter = get_8_Korisnik_OpisProfila;
+                xamlMember.Setter = set_8_Korisnik_OpisProfila;
+                break;
+            case "Mreza.Model.Korisnik.Kodovi":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Kodovi", "System.Collections.Generic.List`1<String>");
+                xamlMember.Getter = get_9_Korisnik_Kodovi;
+                xamlMember.Setter = set_9_Korisnik_Kodovi;
+                break;
+            case "Mreza.Model.Korisnik.GithubLink":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "GithubLink", "String");
+                xamlMember.Getter = get_10_Korisnik_GithubLink;
+                xamlMember.Setter = set_10_Korisnik_GithubLink;
+                break;
+            case "Mreza.Model.Korisnik.Bodovi":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Bodovi", "Int32");
+                xamlMember.Getter = get_11_Korisnik_Bodovi;
+                xamlMember.Setter = set_11_Korisnik_Bodovi;
+                break;
+            case "Mreza.Model.Korisnik.Kontakti":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Kontakti", "System.Collections.Generic.List`1<Mreza.Model.Korisnik>");
+                xamlMember.Getter = get_12_Korisnik_Kontakti;
+                xamlMember.Setter = set_12_Korisnik_Kontakti;
+                break;
+            case "Mreza.Model.Korisnik.Tehnologije":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Tehnologije", "System.Collections.Generic.List`1<Mreza.Model.Tehnologija>");
+                xamlMember.Getter = get_13_Korisnik_Tehnologije;
+                xamlMember.Setter = set_13_Korisnik_Tehnologije;
+                break;
+            case "Mreza.Model.Tehnologija.Naziv":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Tehnologija");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Naziv", "String");
+                xamlMember.Getter = get_14_Tehnologija_Naziv;
+                xamlMember.Setter = set_14_Tehnologija_Naziv;
+                break;
+            case "Mreza.Model.Tehnologija.TipTehnologije":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Tehnologija");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "TipTehnologije", "Mreza.Model.TipTehnologije");
+                xamlMember.Getter = get_15_Tehnologija_TipTehnologije;
+                xamlMember.Setter = set_15_Tehnologija_TipTehnologije;
+                break;
+            case "Mreza.Model.Korisnik.Notifikacije":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Notifikacije", "System.Collections.Generic.List`1<Mreza.Model.Notifikacija>");
+                xamlMember.Getter = get_16_Korisnik_Notifikacije;
+                xamlMember.Setter = set_16_Korisnik_Notifikacije;
+                break;
+            case "Mreza.Model.Notifikacija.Sadrzaj":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Notifikacija");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Sadrzaj", "String");
+                xamlMember.Getter = get_17_Notifikacija_Sadrzaj;
+                xamlMember.Setter = set_17_Notifikacija_Sadrzaj;
+                break;
+            case "Mreza.Model.Notifikacija.Datum":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Notifikacija");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Datum", "System.DateTime");
+                xamlMember.Getter = get_18_Notifikacija_Datum;
+                xamlMember.Setter = set_18_Notifikacija_Datum;
+                break;
+            case "Mreza.Model.Korisnik.Poruke":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Poruke", "System.Collections.Generic.List`1<Mreza.Model.Poruka>");
+                xamlMember.Getter = get_19_Korisnik_Poruke;
+                xamlMember.Setter = set_19_Korisnik_Poruke;
+                break;
+            case "Mreza.Model.Poruka.SadrzajPoruke":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Poruka");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "SadrzajPoruke", "String");
+                xamlMember.Getter = get_20_Poruka_SadrzajPoruke;
+                xamlMember.Setter = set_20_Poruka_SadrzajPoruke;
+                break;
+            case "Mreza.Model.Poruka.Autor":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Poruka");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Autor", "Mreza.Model.Korisnik");
+                xamlMember.Getter = get_21_Poruka_Autor;
+                xamlMember.Setter = set_21_Poruka_Autor;
+                break;
+            case "Mreza.Model.Poruka.DatumSlanja":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Poruka");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "DatumSlanja", "System.DateTime");
+                xamlMember.Getter = get_22_Poruka_DatumSlanja;
+                xamlMember.Setter = set_22_Poruka_DatumSlanja;
+                break;
+            case "Mreza.Model.Korisnik.Projekti":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Projekti", "System.Collections.Generic.List`1<Mreza.Model.Projekat>");
+                xamlMember.Getter = get_23_Korisnik_Projekti;
+                xamlMember.Setter = set_23_Korisnik_Projekti;
+                break;
+            case "Mreza.Model.Projekat.Naslov":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Projekat");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Naslov", "String");
+                xamlMember.Getter = get_24_Projekat_Naslov;
+                xamlMember.Setter = set_24_Projekat_Naslov;
+                break;
+            case "Mreza.Model.Projekat.Autor":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Projekat");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Autor", "Mreza.Model.Korisnik");
+                xamlMember.Getter = get_25_Projekat_Autor;
+                xamlMember.Setter = set_25_Projekat_Autor;
+                break;
+            case "Mreza.Model.Projekat.Kolaboratori":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Projekat");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Kolaboratori", "System.Collections.Generic.List`1<Mreza.Model.Korisnik>");
+                xamlMember.Getter = get_26_Projekat_Kolaboratori;
+                xamlMember.Setter = set_26_Projekat_Kolaboratori;
+                break;
+            case "Mreza.Model.Projekat.Opis":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Projekat");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Opis", "String");
+                xamlMember.Getter = get_27_Projekat_Opis;
+                xamlMember.Setter = set_27_Projekat_Opis;
+                break;
+            case "Mreza.Model.Projekat.DatumKreiranja":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Projekat");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "DatumKreiranja", "System.DateTime");
+                xamlMember.Getter = get_28_Projekat_DatumKreiranja;
+                xamlMember.Setter = set_28_Projekat_DatumKreiranja;
+                break;
+            case "Mreza.Model.Projekat.DatumZavrsetka":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Projekat");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "DatumZavrsetka", "System.DateTime");
+                xamlMember.Getter = get_29_Projekat_DatumZavrsetka;
+                xamlMember.Setter = set_29_Projekat_DatumZavrsetka;
+                break;
+            case "Mreza.Model.Projekat.Tehnologije":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Projekat");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Tehnologije", "System.Collections.Generic.List`1<Mreza.Model.Tehnologija>");
+                xamlMember.Getter = get_30_Projekat_Tehnologije;
+                xamlMember.Setter = set_30_Projekat_Tehnologije;
+                break;
+            case "Mreza.Model.Projekat.Aktivan":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Projekat");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Aktivan", "Boolean");
+                xamlMember.Getter = get_31_Projekat_Aktivan;
+                xamlMember.Setter = set_31_Projekat_Aktivan;
+                break;
+            case "Mreza.ViewModel.AdministratorViewModel.Projekti":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Projekti", "System.Collections.Generic.List`1<Mreza.Model.Projekat>");
+                xamlMember.Getter = get_32_AdministratorViewModel_Projekti;
+                xamlMember.Setter = set_32_AdministratorViewModel_Projekti;
+                break;
+            case "Mreza.ViewModel.AdministratorViewModel.Kor":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Kor", "Mreza.Model.Korisnik");
+                xamlMember.Getter = get_33_AdministratorViewModel_Kor;
+                xamlMember.Setter = set_33_AdministratorViewModel_Kor;
+                break;
+            case "Mreza.ViewModel.AdministratorViewModel.Pro":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Pro", "Mreza.Model.Projekat");
+                xamlMember.Getter = get_34_AdministratorViewModel_Pro;
+                xamlMember.Setter = set_34_AdministratorViewModel_Pro;
+                break;
+            case "Mreza.ViewModel.AdministratorViewModel.Por":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Por", "Mreza.Model.Poruka");
+                xamlMember.Getter = get_35_AdministratorViewModel_Por;
+                xamlMember.Setter = set_35_AdministratorViewModel_Por;
+                break;
+            }
             return xamlMember;
         }
     }

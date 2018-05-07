@@ -23,7 +23,7 @@ namespace Mreza.Model
         private List<Notifikacija> notifikacije;
         private List<Poruka> poruke;
         private List<Projekat> projekti;
-
+        
         protected Korisnik(string eMail, string korisnickoIme, string password, ImageSource slika)
         {
             EMail = eMail;

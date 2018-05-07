@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Mreza;
+using Mreza.Model;
+using System.Diagnostics;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,9 +25,67 @@ namespace Mreza.View
     /// </summary>
     public sealed partial class AdminPanel : Page
     {
+
+        List<Korisnik> korisniciLista;
+        List<Projekat> projektiLista;
+        bool done1 = false, done2 = false;
+
         public AdminPanel()
         {
+            korisniciLista = new List<Korisnik>();
+            projektiLista = new List<Projekat>();
             this.InitializeComponent();
+        }
+
+        private void korisnik_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!done1)
+            {
+                korisniciLista = ((List<Korisnik>)(korisnici.ItemsSource));
+                done1 = true;
+            }
+
+            String trazeni = korisnik.Text.ToLower();
+
+            korisnici.ItemsSource = null;
+            korisnici.Items.Clear();
+            foreach (Korisnik k in korisniciLista)
+                if (k.KorisnickoIme.ToLower().Contains(trazeni))
+                    korisnici.Items.Add(k);
+        }
+
+        private void Pretraga_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!done1)
+            {
+                korisniciLista = ((List<Korisnik>)(AutoriProjekta.ItemsSource));
+                done1 = true;
+            }
+
+            String trazeni = Pretraga.Text.ToLower();
+
+            AutoriProjekta.ItemsSource = null;
+            AutoriProjekta.Items.Clear();
+            foreach (Korisnik k in korisniciLista)
+                if (k.KorisnickoIme.ToLower().Contains(trazeni))
+                    AutoriProjekta.Items.Add(k);
+        }
+
+        private void AutoriProjekta_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (!done2)
+            {
+                projektiLista = ((List<Projekat>)(Projekti.ItemsSource));
+                done2 = true;
+            }
+            
+            Korisnik autorProjekta = (Korisnik)AutoriProjekta.SelectedItem;
+
+            Projekti.ItemsSource = null;
+            Projekti.Items.Clear();
+            foreach (Projekat p in projektiLista)
+                if (autorProjekta == p.Autor)
+                    Projekti.Items.Add(p);
         }
     }
 }

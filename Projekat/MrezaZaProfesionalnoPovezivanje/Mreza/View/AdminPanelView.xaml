@@ -5,7 +5,11 @@
     xmlns:local="using:Mreza"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+      xmlns:local1="using:Mreza.ViewModel"
+      mc:Ignorable="d">
+    <Page.DataContext>
+        <local1:AdministratorViewModel />
+    </Page.DataContext>
 
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
@@ -45,10 +49,10 @@
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="20" Text="" VerticalAlignment="Center" PlaceholderText="Ime korisnika"/>
-                        <ListView Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Width="200" MinHeight="250" Height="Auto" VerticalAlignment="Center" BorderThickness="1" BorderBrush="Black"/>
+                        <TextBox Name="korisnik" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="20" Text="" VerticalAlignment="Center" PlaceholderText="Ime korisnika" TextChanged="korisnik_TextChanged"/>
+                        <ListView Name="korisnici" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Width="200" MinHeight="250" Height="Auto" VerticalAlignment="Center" BorderThickness="1" BorderBrush="Black" ItemsSource="{Binding Korisnici}" SelectedItem="{Binding Kor, Mode=TwoWay}" DisplayMemberPath="KorisnickoIme"/>
                         <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="20" Text="" VerticalAlignment="Center" PlaceholderText="Razlog brisanja" />
-                        <Button Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="50" VerticalAlignment="Center" Content="Obriši"/>
+                        <Button Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="50" VerticalAlignment="Center" Content="Obriši" Command="{Binding ObrisiKorisnika}"/>
                     </Grid>
                     </Grid>
             </PivotItem>
@@ -93,11 +97,11 @@
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="20" Text="" VerticalAlignment="Center" PlaceholderText="Autor projekta"/>
-                        <ListView Grid.Row="3" Grid.Column="1" Name="AutoriProjekta" HorizontalAlignment="Center" Width="200" MinHeight="250" VerticalAlignment="Center" BorderThickness="1" BorderBrush="Black"/>
-                        <ListView Grid.Row="3" Grid.Column="3" Name="Projekti" HorizontalAlignment="Center" Width="200" MinHeight="250" VerticalAlignment="Center" BorderThickness="1" BorderBrush="Black"/>
+                        <TextBox Name="Pretraga" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="20" Text="" VerticalAlignment="Center" PlaceholderText="Autor projekta" TextChanged="Pretraga_TextChanged"/>
+                        <ListView Grid.Row="3" Grid.Column="1" Name="AutoriProjekta" HorizontalAlignment="Center" Width="200" MinHeight="250" VerticalAlignment="Center" BorderThickness="1" BorderBrush="Black" ItemsSource="{Binding Korisnici}" SelectedItem="{Binding Kor, Mode=TwoWay}" SelectionChanged="AutoriProjekta_SelectionChanged" DisplayMemberPath="KorisnickoIme"/>
+                        <ListView Grid.Row="3" Grid.Column="3" Name="Projekti" HorizontalAlignment="Center" Width="200" MinHeight="250" VerticalAlignment="Center" BorderThickness="1" BorderBrush="Black" ItemsSource="{Binding Projekti}" SelectedItem="{Binding Pro, Mode=TwoWay}" DisplayMemberPath="Naslov"/>
                         <TextBox Grid.Row="5" Grid.Column="3" HorizontalAlignment="Center" Width="200" Height="20" Text="" VerticalAlignment="Center" PlaceholderText="Razlog brisanja" />
-                        <Button Grid.Row="6" Grid.Column="3" HorizontalAlignment="Center" Width="200" Height="50" VerticalAlignment="Center" Content="Obriši"/>
+                        <Button Grid.Row="6" Grid.Column="3" HorizontalAlignment="Center" Width="200" Height="50" VerticalAlignment="Center" Content="Obriši" Command="{Binding ObrisiProjekat}"/>
                     </Grid>
                 </Grid>
             </PivotItem>
@@ -127,10 +131,10 @@
                             <RowDefinition Height="0.5*"></RowDefinition>
                             <RowDefinition Height="0.1*"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <ListView Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="550" BorderThickness="1" BorderBrush="Black" />
+                        <ListView Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="550" BorderThickness="1" BorderBrush="Black" ItemsSource="{Binding Korisnici}" SelectedItem="{Binding Kor, Mode=TwoWay}" DisplayMemberPath="KorisnickoIme"/>
                         <ListView Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="750" Height="550" BorderThickness="1" BorderBrush="Black"/>
-                        <TextBox Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="750" Height="100" AcceptsReturn="True"/>
-                        <Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Height="100" Content="Pošalji" FontSize="24"/>
+                        <TextBox Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="750" Height="100" AcceptsReturn="True" Text="{Binding Por, Mode=TwoWay}"/>
+                        <Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Height="100" Content="Pošalji" FontSize="24" Command="{Binding PosaljiPoruku}"/>
                     </Grid>
                 </Grid>
             </PivotItem>
