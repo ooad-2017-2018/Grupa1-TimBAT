@@ -66,6 +66,6 @@
         <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" PlaceholderText="E-mail adresa" Margin="0, 185, 0, 0" Padding="60,3,60,0" />
         <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" PlaceholderText="Šifra" Margin="0, 230, 0, 0" Padding="60,3,60,0" />
         <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" PlaceholderText="Potvrda šifre" Margin="0, 275, 0, 0" Padding="60,3,60,0" />
-        <Button Content="Registruj se" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+        <Button Name="Registruj"  Content="Registruj se" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Registruj_Click"></Button>
     </Grid>
 </Page>

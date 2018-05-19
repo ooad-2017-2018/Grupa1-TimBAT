@@ -25,6 +25,11 @@ namespace Mreza
     /// </summary>
     sealed partial class App : Application
     {
+
+        // This MobileServiceClient has been configured to communicate with the Azure Mobile Service and
+        // Azure Gateway using the application url. You're all set to start working with your Mobile Service!
+        public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient MrezaClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient("https://mreza.azurewebsites.net");
+
         public static MobileServiceClient MobileService = new MobileServiceClient("https://mreza.azurewebsites.net");
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -71,7 +76,7 @@ namespace Mreza
                     // configuring the new page by passing required information as a navigation
                     // parameter
                     // ayyyy lmao
-                    rootFrame.Navigate(typeof(AdminPanel), e.Arguments);
+                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();

@@ -10,6 +10,8 @@ namespace Mreza.Model
 {
     abstract public class Korisnik
     {
+        private static int globalID = 0;
+        private int ID;
         private String eMail;
         private String korisnickoIme;
         private String password;
@@ -39,6 +41,7 @@ namespace Mreza.Model
             Notifikacije = new List<Notifikacija>();
             Poruke = new List<Poruka>();
             Projekti = new List<Projekat>();
+            ID = globalID++;
         }
 
         protected Korisnik(string eMail, string password, ImageSource slika)
@@ -56,6 +59,7 @@ namespace Mreza.Model
             Notifikacije = new List<Notifikacija>();
             Poruke = new List<Poruka>();
             Projekti = new List<Projekat>();
+            ID = globalID++;
         }
 
         public string EMail { get => eMail; set => eMail = value; }

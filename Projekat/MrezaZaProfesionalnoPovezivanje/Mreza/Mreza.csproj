@@ -92,6 +92,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Azure\Korisnici.cs" />
     <Compile Include="Helper\INavigationService.cs" />
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
@@ -119,6 +120,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="Connected Services\MrezaMobileApp\ConnectedService.json" />
     <None Include="Mreza_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -160,7 +162,9 @@
       <Version>6.0.8</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

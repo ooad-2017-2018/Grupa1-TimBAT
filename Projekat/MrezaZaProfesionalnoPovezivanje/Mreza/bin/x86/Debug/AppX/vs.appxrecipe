@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-07T03:56:03.061</Modified>
+      <Modified>2018-05-19T15:06:40.039</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Mreza.exe">
       <PackagePath>entrypoint\Mreza.exe</PackagePath>
-      <Modified>2018-05-07T03:56:02.535</Modified>
+      <Modified>2018-05-19T15:06:38.066</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ekvinto\.nuget\packages\microsoft.azure.mobile.client\4.0.2\lib\uap10.0\Microsoft.Azure.Mobile.Client.dll">
       <PackagePath>Microsoft.Azure.Mobile.Client.dll</PackagePath>
@@ -563,7 +563,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Mreza.xr.xml">
       <PackagePath>Mreza.xr.xml</PackagePath>
-      <Modified>2018-05-07T03:04:57.913</Modified>
+      <Modified>2018-05-19T15:05:51.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -572,11 +572,11 @@
     <AppxPackagedFile Include="D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-07T03:55:10.527</Modified>
+      <Modified>2018-05-19T15:06:39.572</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Core\Mreza.exe">
       <PackagePath>Mreza.exe</PackagePath>
-      <Modified>2018-05-07T03:56:03.059</Modified>
+      <Modified>2018-05-19T15:06:40.033</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
