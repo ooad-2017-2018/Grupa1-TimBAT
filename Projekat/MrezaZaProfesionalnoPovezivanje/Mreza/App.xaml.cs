@@ -17,6 +17,10 @@ using Windows.UI.Xaml.Navigation;
 using Mreza.View;
 using Mreza.Model;
 using Microsoft.WindowsAzure.MobileServices;
+using System.Threading.Tasks;
+using Mreza.Azure;
+
+using System.Data;
 
 namespace Mreza
 {
@@ -28,9 +32,28 @@ namespace Mreza
 
         // This MobileServiceClient has been configured to communicate with the Azure Mobile Service and
         // Azure Gateway using the application url. You're all set to start working with your Mobile Service!
-        public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient MrezaClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient("https://mreza.azurewebsites.net");
+        //public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient MrezaClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient("https://mreza.azurewebsites.net");
 
         public static MobileServiceClient MobileService = new MobileServiceClient("https://mreza.azurewebsites.net");
+
+        private async void ucitajKorisnike()
+        {
+            IMobileServiceTable<Korisnici> usersTable = MobileService.GetTable<Korisnici>();
+            var users = await usersTable.ToListAsync();
+            
+            for(int i = 0; i < users.Count; i++)
+            {
+                if(users.ElementAt(i).CV == null)
+                {
+                    BatNet.Korisnici.Add(new Firma(users.ElementAt(i).email, users.ElementAt(i).sifra, null, users.ElementAt(i).naziv, users.ElementAt(i).datum));
+                }
+                else
+                {
+                    BatNet.Korisnici.Add(new ObicniKorisnik(users.ElementAt(i).email, users.ElementAt(i).sifra, null, users.ElementAt(i).naziv, users.ElementAt(i).datum));
+                }
+            }
+        }
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().

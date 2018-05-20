@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Mreza.Model;
 using Mreza.Helper;
+using Mreza.Azure;
 using System.ComponentModel;
 using System.Diagnostics;
+
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace Mreza.ViewModel
 {
@@ -25,15 +28,17 @@ namespace Mreza.ViewModel
 
         public AdministratorViewModel()
         {
-            ObrisiKorisnika = new RelayCommand<object>(obrisiKorisnika, mozeLiSeObrisatiKorisnik);
+            ObrisiKorisnika = new RelayCommand<object>(obrisiKorisnikaAsync, mozeLiSeObrisatiKorisnik);
             ObrisiProjekat = new RelayCommand<object>(obrisiProjekat, mozeLiSeObrisatiProjekat);
             PosaljiPoruku = new RelayCommand<object>(posaljiPoruku, mozeLiSePoslatiPoruka);
             Korisnici = BatNet.Korisnici;
             Projekti = BatNet.Projekti;
         }
 
-        public void obrisiKorisnika(object parametar)
+        public async void obrisiKorisnikaAsync(object parametar)
         {
+            IMobileServiceTable<Korisnici> usersTable = App.MobileService.GetTable<Korisnici>();
+
             for (int i = 0; i < BatNet.Projekti.Count; i++)
             {
                 if (BatNet.Projekti.ElementAt(i).Autor.KorisnickoIme == Kor.KorisnickoIme)
@@ -46,6 +51,15 @@ namespace Mreza.ViewModel
             {
                 if (BatNet.Korisnici.ElementAt(i).KorisnickoIme == Kor.KorisnickoIme)
                 {
+                    List<Korisnici> korisnik = await usersTable.Where(u => u.id == Kor.ID.ToString()).ToListAsync();
+                    if(korisnik.Count > 1)
+                    {
+                        Debug.WriteLine("Big mistake! Stahp!");
+                        return;
+                    }
+
+                    korisnik.ElementAt(0).obrisan = true;
+                    await usersTable.UpdateAsync(korisnik.ElementAt(0));
                     BatNet.Korisnici.RemoveAt(i);
                 }
             }

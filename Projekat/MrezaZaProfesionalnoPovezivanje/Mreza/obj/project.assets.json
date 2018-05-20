@@ -25777,24 +25777,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ekvinto\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
+    "C:\\Users\\Adnan\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
+      "projectUniqueName": "D:\\Adnan\\Google Drive\\ETF\\Cetvrti semestar\\OOAD\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
       "projectName": "Mreza",
-      "projectPath": "D:\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
-      "packagesPath": "C:\\Users\\Ekvinto\\.nuget\\packages\\",
-      "outputPath": "D:\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\obj\\",
+      "projectPath": "D:\\Adnan\\Google Drive\\ETF\\Cetvrti semestar\\OOAD\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
+      "packagesPath": "C:\\Users\\Adnan\\.nuget\\packages\\",
+      "outputPath": "D:\\Adnan\\Google Drive\\ETF\\Cetvrti semestar\\OOAD\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ekvinto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Adnan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],

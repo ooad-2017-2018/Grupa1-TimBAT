@@ -1,1 +1,1 @@
-D:\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\Mreza.csproj;x86
+D:\Adnan\Google Drive\ETF\Cetvrti semestar\OOAD\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\Mreza.csproj;x86
