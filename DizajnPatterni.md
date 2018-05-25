@@ -40,12 +40,12 @@ Kada objektno ponašanje zavisi od stanja i okolnosti, ili kada je ponašanje ap
 case statementa koji kontrolišu izvršavanje zasnovano od stanja tokom rada aplikacije.
 
 ### Rješenje:
-1.	napraviti klasu koja će služiti kao okvirna klasa za klasu stanja mašine, i sa kojom će se klijent korisnik sporazumijevati
-2.	napraviti baznu klasu stanja koja će imati sve metode za interface mašine
-3.	izvesti novu klasu stanja za svako stanje, koja će overridat svaku metodu iz bazne klase koja je potrebna za to stanje
+1.	Napraviti klasu koja će služiti kao okvirna klasa za klasu stanja mašine, i sa kojom će se klijent korisnik sporazumijevati
+2.	Napraviti baznu klasu stanja koja će imati sve metode za interface mašine
+3.	Izvesti novu klasu stanja za svako stanje, koja će overridat svaku metodu iz bazne klase koja je potrebna za to stanje
 4.	okvirna klasa će predstavljati trenutno stanje
-5.	svaki klijent request na okvirnoj klasi će se prebacivati na trenutni objekat stanja, čiji će pointer biti u okvirnoj klasi
-6.	metode stanja mijenjaju okvirnu klasu na odgovarajuće stanje
+5.	Svaki klijent request na okvirnoj klasi će se prebacivati na trenutni objekat stanja, čiji će pointer biti u okvirnoj klasi
+6.	Metode stanja mijenjaju okvirnu klasu na odgovarajuće stanje
 
 ## Iterator pattern
 
@@ -55,9 +55,9 @@ bi se formirali algoritmi za površno prolaženje kroz tih strutktura bez otkriv
 
 ### Rješenje:
 1.	Uzeti željenu klasu kolekcije
-2.	dodati metodu "create_iterator()" koja pravi iterator klasu te dati privilegije tom iteratoru
-3.	dizajnirati taj iterator da može prolaziti kroz kolekciju bez problema
-4.	upisati metode kao što su first(), last(), next() itd. u tu iterator klasu, da bi klijent mogao raditi sa tim iteratorom
+2.	Dodati metodu "create_iterator()" koja pravi iterator klasu te dati privilegije tom iteratoru
+3.	Dizajnirati taj iterator da može prolaziti kroz kolekciju bez problema
+4.	Upisati metode kao što su first(), last(), next() itd. u tu iterator klasu, da bi klijent mogao raditi sa tim iteratorom
 
 ## Adapter pattern
 
