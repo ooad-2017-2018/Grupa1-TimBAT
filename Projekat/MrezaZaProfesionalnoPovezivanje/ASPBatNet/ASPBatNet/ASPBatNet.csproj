@@ -9,11 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-<<<<<<< HEAD
-    <ProjectGuid>{A6E7B9F6-C55D-4D81-AF86-49749D280430}</ProjectGuid>
-=======
-    <ProjectGuid>{222BACF2-47E5-44B1-BAAD-641FE83843E6}</ProjectGuid>
->>>>>>> 45dffc5a8043da3768f2ab4f342d4af552579fbc
+    <ProjectGuid>{29AD0F1B-9A7F-453C-86FD-C80701D9EDDE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -173,13 +169,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Models\ASPBatNetModel.cs" />
     <Compile Include="Models\Korisnici.cs" />
-=======
-    <Compile Include="Models\Korisnici.cs" />
-    <Compile Include="Models\MrezaModel.cs" />
->>>>>>> 45dffc5a8043da3768f2ab4f342d4af552579fbc
     <Compile Include="Models\Notifikacije.cs" />
     <Compile Include="Models\Poruke.cs" />
     <Compile Include="Models\Projekti.cs" />
@@ -257,15 +248,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-<<<<<<< HEAD
-          <DevelopmentServerPort>59070</DevelopmentServerPort>
+          <DevelopmentServerPort>52237</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59070/</IISUrl>
-=======
-          <DevelopmentServerPort>56392</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56392/</IISUrl>
->>>>>>> 45dffc5a8043da3768f2ab4f342d4af552579fbc
+          <IISUrl>http://localhost:52237/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

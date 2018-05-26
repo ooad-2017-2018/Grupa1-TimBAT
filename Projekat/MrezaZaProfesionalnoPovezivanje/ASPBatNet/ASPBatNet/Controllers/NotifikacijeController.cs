@@ -15,11 +15,7 @@ namespace ASPBatNet.Controllers
 {
     public class NotifikacijeController : ApiController
     {
-<<<<<<< HEAD
         private ASPBatNetModel db = new ASPBatNetModel();
-=======
-        private MrezaModel db = new MrezaModel();
->>>>>>> 45dffc5a8043da3768f2ab4f342d4af552579fbc
 
         // GET: api/Notifikacije
         public IQueryable<Notifikacije> GetNotifikacije()
