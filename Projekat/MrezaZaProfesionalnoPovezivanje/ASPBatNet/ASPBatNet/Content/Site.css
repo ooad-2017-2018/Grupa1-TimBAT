@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('Images/pozadina.jpg');
+    background-size: cover;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +24,29 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.jumbotron {
+    background-color:transparent;
+}
+
+div#podaci {
+    width:50%;
+    height:50%;
+    margin:10% 25% 25% 25%;
+}
+
+#username,
+#password,
+#login {
+    width:50%;
+    margin:0% 25% 0% 25%;
+}
+
+#greetingMessage {
+    color: white;
+    text-shadow: 3px 3px 5px #000000;
+    width:auto;
+    text-align:center;
+    margin-top:20%;
+}
+
