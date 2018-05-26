@@ -14,6 +14,10 @@ CompoundExpression klase koje služe za rekurzivno rješavanje problema interpre
 CompoundExpression neki dio pravila koji poziva drugo pravilo za obradu izraza, dok je TerminalExpression bazni 
 slučaj za neko pravilo.
 
+### U našem projektu:
+
+Može se koristiti za provjeru validnosti šifre pri registraciji korisnika (npr. da li je uneseno dovoljno znakova, da li su velika i mala slova, da li ima brojeva i drugih znakova).
+
 ## Observer pattern
 
 ### Problem:
@@ -27,7 +31,10 @@ modifikuje, ostali će biti obavješteni automatski. Observer koristi tri actor 
 Observer nadzire subjekat i svaki put kad se on promijeni obavještavaju se objekti. Dobar primjer ovoga je aukcija: 
 svako ima malu palicu koju diže da bi dao svoju ponudu, kad neko digne palicu, cijena na aukciji se diže i o tome se 
 obavještavaju ostali učesnici aukcije.
-U našem projektu se observer može koristiti za notifikacije kad korisniku dođe poruka.
+
+### U našem projektu:
+
+Može se koristiti za notifikacije korisniku u momentu kad mu dođe poruka od drugog korisnika.
 
 ## Strategy pattern
 
@@ -51,6 +58,10 @@ Struktura: Context klasa, IStrategy interfejs za sve algoritme, klase koje imple
 
 Mediator pattern se koristi da reducira kompleksnost komunikacije između više objekata ili klasa. Ovaj pattern sadrži 
 mediatorsku klasu koja se brine o komunikaciji između dvije klase ili više objekata te dvije klase. Tako se spriječava pojava 'spaghetti code-a'
+
+### U našem projektu:
+
+Može se koristiti za razmjenu poruka između nekoliko objekata klase Korisnik.
 
 ## Visitor pattern
 
@@ -246,4 +257,8 @@ Aplikaciji je potrebna jedna i samo jedna instanca određene klase. Pored toga, 
 ### Rješenje:
 
 Singleton pattern opisuje način na koji kreiramo interface za klase kod kojih želimo limitirati instance na jedan. Takav interface treba da sadrži privatni konstruktor, statički atribut na privatnom nivou, te metodu koja služi za pristupanje samom objektu.
+
+### U našem projektu:
+
+Naš projekat sadrži klasu BatNet koja predstavlja sistem i potrebna je samo jedna instanca te klase.
 
