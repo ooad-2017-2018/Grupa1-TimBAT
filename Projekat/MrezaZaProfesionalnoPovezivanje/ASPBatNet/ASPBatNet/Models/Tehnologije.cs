@@ -13,5 +13,19 @@ namespace ASPBatNet.Models
         public string id { get; set; }
 
         public string naziv { get; set; }
+<<<<<<< HEAD
+
+        [Column(TypeName = "timestamp")]
+        [MaxLength(8)]
+        [Timestamp]
+        public byte[] version { get; set; }
+
+        public DateTimeOffset createdAt { get; set; }
+
+        public DateTimeOffset updatedAt { get; set; }
+
+        public bool deleted { get; set; }
+=======
+>>>>>>> 45dffc5a8043da3768f2ab4f342d4af552579fbc
     }
 }

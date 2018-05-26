@@ -15,7 +15,11 @@ namespace ASPBatNet.Controllers
 {
     public class PorukeController : ApiController
     {
+<<<<<<< HEAD
+        private ASPBatNetModel db = new ASPBatNetModel();
+=======
         private MrezaModel db = new MrezaModel();
+>>>>>>> 45dffc5a8043da3768f2ab4f342d4af552579fbc
 
         // GET: api/Poruke
         public IQueryable<Poruke> GetPoruke()

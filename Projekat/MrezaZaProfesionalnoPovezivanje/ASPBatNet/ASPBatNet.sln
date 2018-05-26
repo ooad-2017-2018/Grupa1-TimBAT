@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
+<<<<<<< HEAD
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPBatNet", "ASPBatNet\ASPBatNet.csproj", "{A6E7B9F6-C55D-4D81-AF86-49749D280430}"
+=======
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPBatNet", "ASPBatNet\ASPBatNet.csproj", "{222BACF2-47E5-44B1-BAAD-641FE83843E6}"
+>>>>>>> 45dffc5a8043da3768f2ab4f342d4af552579fbc
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +15,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
+		{A6E7B9F6-C55D-4D81-AF86-49749D280430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E7B9F6-C55D-4D81-AF86-49749D280430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E7B9F6-C55D-4D81-AF86-49749D280430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E7B9F6-C55D-4D81-AF86-49749D280430}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
 		{222BACF2-47E5-44B1-BAAD-641FE83843E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{222BACF2-47E5-44B1-BAAD-641FE83843E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{222BACF2-47E5-44B1-BAAD-641FE83843E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{222BACF2-47E5-44B1-BAAD-641FE83843E6}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> 45dffc5a8043da3768f2ab4f342d4af552579fbc
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+<<<<<<< HEAD
+		SolutionGuid = {F849BB94-7D99-4997-882C-03950E7E58C2}
+=======
 		SolutionGuid = {C0C55818-4C8F-4C0E-BF02-8A06F9ABADA7}
+>>>>>>> 45dffc5a8043da3768f2ab4f342d4af552579fbc
 	EndGlobalSection
 EndGlobal
