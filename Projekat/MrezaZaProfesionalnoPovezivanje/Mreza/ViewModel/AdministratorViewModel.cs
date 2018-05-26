@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 
 using Microsoft.WindowsAzure.MobileServices;
+using Windows.UI.Popups;
 
 namespace Mreza.ViewModel
 {
@@ -32,17 +33,38 @@ namespace Mreza.ViewModel
             ObrisiProjekat = new RelayCommand<object>(obrisiProjekat, mozeLiSeObrisatiProjekat);
             PosaljiPoruku = new RelayCommand<object>(posaljiPoruku, mozeLiSePoslatiPoruka);
             Korisnici = BatNet.Korisnici;
+            for(int i = 0; i < Korisnici.Count; i++)
+            {
+                if (Korisnici.ElementAt(i).KorisnickoIme.Equals("admin")) Korisnici.RemoveAt(i);
+            }
             Projekti = BatNet.Projekti;
         }
 
         public async void obrisiKorisnikaAsync(object parametar)
         {
+            if (Kor == null) return;
             IMobileServiceTable<Korisnici> usersTable = App.MobileService.GetTable<Korisnici>();
+            IMobileServiceTable<Projekti> projectsTable = App.MobileService.GetTable<Projekti>();
 
             for (int i = 0; i < BatNet.Projekti.Count; i++)
             {
                 if (BatNet.Projekti.ElementAt(i).Autor.KorisnickoIme == Kor.KorisnickoIme)
                 {
+                    for(int j = 0; j < BatNet.Korisnici.Count; j++)
+                    {
+                        for(int k = 0; k < BatNet.Projekti.Count; k++)
+                        {
+                            if (BatNet.Projekti.ElementAt(k).ID1.Equals(Projekti.ElementAt(i).ID1)) BatNet.Korisnici.ElementAt(j).Projekti.RemoveAt(k);
+                        }
+                    }
+                    List<Projekti> projekat = await projectsTable.Where(u => u.id == BatNet.Projekti.ElementAt(i).ID1).ToListAsync();
+                    if (projekat.Count > 1)
+                    {
+                        Debug.WriteLine("Big mistake! Stahp!");
+                        return;
+                    }
+                    projekat.ElementAt(0).obrisan = true;
+                    await projectsTable.UpdateAsync(projekat.ElementAt(0));
                     BatNet.Projekti.RemoveAt(i);
                 }
             }
@@ -70,8 +92,11 @@ namespace Mreza.ViewModel
             return true;
         }
 
-        public void obrisiProjekat(object parametar)
+        public async void obrisiProjekat(object parametar)
         {
+            IMobileServiceTable<Projekti> usersTable = App.MobileService.GetTable<Projekti>();
+            if (Pro == null) return;
+            String idProjekta = Pro.ID1;
             for (int i = 0; i < BatNet.Projekti.Count; i++)
             {
                 if (BatNet.Projekti.ElementAt(i) == Pro)
@@ -79,6 +104,21 @@ namespace Mreza.ViewModel
                     BatNet.Projekti.RemoveAt(i);
                 }
             }
+            for(int i = 0; i < BatNet.Korisnici.Count; i++)
+            {
+                for(int j = 0; j < BatNet.Korisnici.ElementAt(i).Projekti.Count; j++)
+                {
+                    if (BatNet.Korisnici.ElementAt(i).Projekti.ElementAt(j).ID1.Equals(idProjekta)) BatNet.Korisnici.ElementAt(i).Projekti.RemoveAt(j);
+                }
+            }
+            List<Projekti> projekat = await usersTable.Where(u => u.id == idProjekta).ToListAsync();
+            if (projekat.Count > 1)
+            {
+                Debug.WriteLine("Big mistake! Stahp!");
+                return;
+            }
+            projekat.ElementAt(0).obrisan = true;
+            await usersTable.UpdateAsync(projekat.ElementAt(0));
         }
 
         public bool mozeLiSeObrisatiProjekat(object parametar)
@@ -88,7 +128,12 @@ namespace Mreza.ViewModel
 
         public void posaljiPoruku(object parametar)
         {
-            Kor.Poruke.Add(Por);
+            if(Kor != null && !String.IsNullOrEmpty(Por.SadrzajPoruke)) Kor.Poruke.Add(Por);
+            else
+            {
+                MessageDialog messageDialog = new MessageDialog("Nije moguće poslati poruku bez odabira korisnika i unosa sadržaja!");
+                messageDialog.ShowAsync();
+            }
         }
 
         public bool mozeLiSePoslatiPoruka(object parametar)

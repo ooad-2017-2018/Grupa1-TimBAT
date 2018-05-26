@@ -25,13 +25,15 @@ namespace Mreza.Model
         private List<Notifikacija> notifikacije;
         private List<Poruka> poruke;
         private List<Projekat> projekti;
+        private bool obrisan = false;
         
-        protected Korisnik(string eMail, string korisnickoIme, string password, ImageSource slika)
+        protected Korisnik(int id, string eMail, string korisnickoIme, string password, List<Korisnik> kontakti, List<Projekat> projekti) 
         {
+            ID = id;
             EMail = eMail;
             KorisnickoIme = korisnickoIme;
             Password = password;
-            Slika = slika;
+            Slika = null;
             OpisProfila = "";
             Kodovi = new List<string>();
             GithubLink = "";
@@ -41,7 +43,6 @@ namespace Mreza.Model
             Notifikacije = new List<Notifikacija>();
             Poruke = new List<Poruka>();
             Projekti = new List<Projekat>();
-            id = globalID++;
         }
 
         protected Korisnik(string eMail, string password, ImageSource slika)
@@ -62,7 +63,25 @@ namespace Mreza.Model
             id = globalID++;
         }
 
-        public int ID { get => id; }
+        protected Korisnik(string eMail, string username, string password, ImageSource slika)
+        {
+            EMail = eMail;
+            KorisnickoIme = username;
+            Password = password;
+            Slika = slika;
+            OpisProfila = "";
+            Kodovi = new List<string>();
+            GithubLink = "";
+            Bodovi = 0;
+            Kontakti = new List<Korisnik>();
+            Tehnologije = new List<Tehnologija>();
+            Notifikacije = new List<Notifikacija>();
+            Poruke = new List<Poruka>();
+            Projekti = new List<Projekat>();
+            id = globalID++;
+        }
+
+        public int ID { get => id; set => id = value; }
         public string EMail { get => eMail; set => eMail = value; }
         public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
         public string Password { get => password; set => password = value; }
@@ -76,5 +95,6 @@ namespace Mreza.Model
         public List<Notifikacija> Notifikacije { get => notifikacije; set => notifikacije = value; }
         public List<Poruka> Poruke { get => poruke; set => poruke = value; }
         public List<Projekat> Projekti { get => projekti; set => projekti = value; }
+        public bool Obrisan { get => obrisan; set => obrisan = value; }
     }
 }

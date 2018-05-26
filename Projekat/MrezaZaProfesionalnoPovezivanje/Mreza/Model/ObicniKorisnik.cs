@@ -13,11 +13,17 @@ namespace Mreza.Model
         private DateTime datumRodjenja;
         private String CV;
 
-        public ObicniKorisnik(string eMail, string korisnickoIme, string password, ImageSource slika, string ime, DateTime datumRodjenja, string cV) : base(eMail, korisnickoIme, password, slika)
+        public ObicniKorisnik(int id, string eMail, string korisnickoIme, string password, List<Korisnik> kontakti, List<Projekat> projekti, String ime) : base(id, eMail, korisnickoIme, password, kontakti, projekti)
+        {
+            Ime = ime;
+        }
+
+        public ObicniKorisnik(string eMail, string korisnickoIme, string password, ImageSource slika, string ime, DateTime datumRodjenja, bool obrisan) : base(eMail, korisnickoIme, password, slika)
         {
             Ime = ime;
             DatumRodjenja = datumRodjenja;
             CV1 = "";
+            Obrisan = obrisan;
         }
 
         public ObicniKorisnik(string eMail, string password, ImageSource slika, string ime, DateTime datumRodjenja) : base(eMail, password, slika)

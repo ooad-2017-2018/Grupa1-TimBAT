@@ -93,6 +93,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Azure\Korisnici.cs" />
+    <Compile Include="Azure\Projekti.cs" />
     <Compile Include="Helper\INavigationService.cs" />
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Model\Projekat.cs" />
     <Compile Include="Model\Tehnologija.cs" />
     <Compile Include="ViewModel\AdministratorViewModel.cs" />
+    <Compile Include="ViewModel\LoginRegistracijaViewModel.cs" />
     <Compile Include="View\AdminPanelView.xaml.cs">
       <DependentUpon>AdminPanelView.xaml</DependentUpon>
     </Compile>
@@ -125,7 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\backgroundImg.jpg" />
-    <Content Include="Assets\logo.jpg" />
+    <Content Include="Assets\logo.png" />
     <Content Include="Assets\pozadina.jpg" />
     <Content Include="Assets\profilna.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

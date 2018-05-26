@@ -16,7 +16,7 @@
         <Pivot>
             <PivotItem>
                 <PivotItem.Header>
-                    <TextBlock FontWeight="Bold" FontStyle="Oblique" Text="Brisanje Korisnika"/>
+                    <TextBlock FontWeight="Bold" FontStyle="Oblique" Text="Brisanje korisnika"/>
                 </PivotItem.Header>
                 <Grid>
                     <Grid.Background>
@@ -58,7 +58,7 @@
             </PivotItem>
             <PivotItem>
                 <PivotItem.Header>
-                    <TextBlock FontWeight="Bold" FontStyle="Oblique" Text="Brisanje Projekata"/>
+                    <TextBlock FontWeight="Bold" FontStyle="Oblique" Text="Brisanje projekata"/>
                 </PivotItem.Header>
                 <Grid Grid.Row="1" Grid.Column="1">
                     <Grid.Background>

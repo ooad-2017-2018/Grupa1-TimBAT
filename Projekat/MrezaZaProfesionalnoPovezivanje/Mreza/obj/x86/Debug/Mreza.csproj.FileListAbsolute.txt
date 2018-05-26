@@ -427,8 +427,6 @@ D:\Adnan\Cetvrti semestar\OOAD\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionaln
 D:\Adnan\Cetvrti semestar\OOAD\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\AdminPanel.xaml
 D:\Adnan\Cetvrti semestar\OOAD\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\AdminPanel.xbf
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\App.xbf
-C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\AdminPanel.xbf
-C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\MainPage.xbf
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Mreza.xr.xml
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Mreza.exe
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Mreza.pdb
@@ -551,20 +549,11 @@ C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoP
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\System.Xml.XDocument.dll
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\System.Xml.XmlDocument.dll
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\System.Xml.XmlSerializer.dll
-C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Mreza.csprojResolveAssemblyReference.cache
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\App.g.i.cs
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\App.g.cs
-C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\AdminPanel.g.i.cs
-C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\AdminPanel.g.cs
-C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\MainPage.g.i.cs
-C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\MainPage.g.cs
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\XamlTypeInfo.g.cs
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\App.xaml
-C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\AdminPanel.xaml
-C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\MainPage.xaml
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\App.xbf
-C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\AdminPanel.xbf
-C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\MainPage.xbf
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Mreza.csproj.CoreCompileInputs.cache
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Mreza.csproj.CopyComplete
@@ -1331,3 +1320,19 @@ D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovez
 D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Microsoft.Azure.Mobile.Client\en-US\Microsoft.WindowsAzure.MobileServices.Resources.resw
 D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Mreza.csproj.GenerateResource.Cache
 D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Microsoft.Azure.Mobile.Client.pri.xml
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\View\AdminPanelView.xbf
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\View\MainPage.xbf
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Microsoft.Azure.Mobile.Client.dll
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\View\AdminPanelView.g.i.cs
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\View\AdminPanelView.g.cs
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\View\MainPage.g.i.cs
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\View\MainPage.g.cs
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\View\AdminPanelView.xaml
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\View\MainPage.xaml
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\View\AdminPanelView.xbf
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\View\MainPage.xbf
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Microsoft.Azure.Mobile.Client\en-US\Microsoft.WindowsAzure.MobileServices.Resources.resw
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Mreza.csproj.GenerateResource.Cache
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Microsoft.Azure.Mobile.Client.pri.xml
+C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Mreza.csprojResolveAssemblyReference.cache

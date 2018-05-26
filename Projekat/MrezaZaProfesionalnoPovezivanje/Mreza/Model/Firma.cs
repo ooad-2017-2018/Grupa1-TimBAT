@@ -13,11 +13,19 @@ namespace Mreza.Model
         private DateTime datumOsnivanja;
         private String website;
 
-        public Firma(string eMail, string korisnickoIme, string password, ImageSource slika, string nazivFirme, DateTime datumOsnivanja) : base(eMail, korisnickoIme, password, slika)
+        public Firma(int id, string eMail, string korisnickoIme, string password, List<Korisnik> kontakti, List<Projekat> projekti, String imeFirme) : base(id, eMail, korisnickoIme, password, kontakti, projekti)
+        {
+            NazivFirme = imeFirme;
+            DatumOsnivanja = DateTime.Now;
+            Website = "";
+        }
+
+        public Firma(string eMail, string korisnickoIme, string password, ImageSource slika, string nazivFirme, DateTime datumOsnivanja, bool obrisan) : base(eMail, korisnickoIme, password, slika)
         {
             NazivFirme = nazivFirme;
             DatumOsnivanja = datumOsnivanja;
             Website = "";
+            Obrisan = obrisan;
         }
 
         public Firma(string eMail, string password, ImageSource slika, string nazivFirme, DateTime datumOsnivanja) : base(eMail, password, slika)

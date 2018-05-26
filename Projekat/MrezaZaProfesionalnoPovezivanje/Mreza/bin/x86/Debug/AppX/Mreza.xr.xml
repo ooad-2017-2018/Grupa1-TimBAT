@@ -11,6 +11,19 @@
     <RootPropertyPathName Name="Projekti" />
     <RootPropertyPathName Name="Pro" />
     <RootPropertyPathName Name="ObrisiKorisnika" />
+    <RootPropertyPathName Name="RegistrujSe" />
+    <RootPropertyPathName Name="Potvrda" />
+    <RootPropertyPathName Name="PasswordRegistracija" />
+    <RootPropertyPathName Name="Email" />
+    <RootPropertyPathName Name="UsernameRegistracija" />
+    <RootPropertyPathName Name="Datum" />
+    <RootPropertyPathName Name="Naziv" />
+    <RootPropertyPathName Name="PrivatanProfil" />
+    <RootPropertyPathName Name="PathSlike" />
+    <RootPropertyPathName Name="PrijaviSe" />
+    <RootPropertyPathName Name="Password" />
+    <RootPropertyPathName Name="Username" />
+    <RootPropertyPathName Name="OdaberiSliku" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -115,11 +128,18 @@
       <RootProperty Name="Child" />
     </RootType>
     <RootType FullName="Mreza.View.AdminPanel" />
+    <RootType FullName="Mreza.ViewModel.LoginRegistracijaViewModel" />
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
       <RootProperty Name="Stretch" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
+      <RootProperty Name="PlaceholderText" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Password" />
+      <RootProperty Name="Padding" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
       <RootProperty Name="Content" />
@@ -134,6 +154,7 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Date" />
     </RootType>
     <RootType FullName="Mreza.View.MainPage" />
   </Roots.RootTypes>

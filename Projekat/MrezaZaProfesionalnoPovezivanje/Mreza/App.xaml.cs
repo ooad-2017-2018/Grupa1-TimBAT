@@ -43,13 +43,70 @@ namespace Mreza
             
             for(int i = 0; i < users.Count; i++)
             {
-                if(users.ElementAt(i).CV == null)
+                if(users.ElementAt(i).CV == null && users.ElementAt(i).obrisan == false)
                 {
-                    BatNet.Korisnici.Add(new Firma(users.ElementAt(i).email, users.ElementAt(i).sifra, null, users.ElementAt(i).naziv, users.ElementAt(i).datum));
+                    BatNet.Korisnici.Add(new Firma(Convert.ToInt32(users.ElementAt(i).id), users.ElementAt(i).email, users.ElementAt(i).username, users.ElementAt(i).sifra, null, null, users.ElementAt(i).naziv));
                 }
-                else
+                else if(users.ElementAt(i).obrisan == false)
                 {
-                    BatNet.Korisnici.Add(new ObicniKorisnik(users.ElementAt(i).email, users.ElementAt(i).sifra, null, users.ElementAt(i).naziv, users.ElementAt(i).datum));
+                    BatNet.Korisnici.Add(new ObicniKorisnik(Convert.ToInt32(users.ElementAt(i).id), users.ElementAt(i).email, users.ElementAt(i).username, users.ElementAt(i).sifra, null, null, users.ElementAt(i).naziv));
+                }
+            }
+        }
+
+        private async void ucitajProjekte()
+        {
+            IMobileServiceTable<Projekti> projectsTable = MobileService.GetTable<Projekti>();
+            var projects = await projectsTable.ToListAsync();
+
+            for(int i = 0; i < projects.Count; i++)
+            {
+                if(projects.ElementAt(i).obrisan == false)
+                {
+                    List<Korisnik> listaKolaboratora = new List<Korisnik>();
+                    String[] idKolaboratora = new String[0];
+                    if(projects.ElementAt(i).kolaboratori_id != null)
+                    {
+                        projects.ElementAt(i).kolaboratori_id.Split(',');
+                        for (int j = 0; j < idKolaboratora.Count(); j++)
+                        {
+                            Korisnik kor = BatNet.Korisnici.Find(k => k.ID.Equals(idKolaboratora[j]));
+                            if (kor != null) listaKolaboratora.Add(kor);
+                        }
+                        Korisnik autor = BatNet.Korisnici.Find(k => k.ID.Equals(projects.ElementAt(i).autor_id));
+                        BatNet.Projekti.Add(new Projekat(projects.ElementAt(i).id, projects.ElementAt(i).naslov, autor, listaKolaboratora));
+                        autor.Projekti.Add(BatNet.Projekti.Last());
+                        foreach (Korisnik k in listaKolaboratora)
+                        {
+                            k.Projekti.Add(BatNet.Projekti.Last());
+                        }
+                    }
+                }
+            }
+        }
+
+        private async void dodajKontakte()
+        {
+            IMobileServiceTable<Korisnici> usersTable = MobileService.GetTable<Korisnici>();
+            var users = await usersTable.ToListAsync();
+
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (users.ElementAt(i).obrisan == false)
+                {
+                    List<Korisnik> listaKontakata = new List<Korisnik>();
+                    String[] idKontakata = new String[0];
+                    if (users.ElementAt(i).kontakti_id != null)
+                    {
+                        idKontakata = users.ElementAt(i).kontakti_id.Split(',');
+                        for (int j = 0; j < idKontakata.Count(); j++)
+                        {
+                            Korisnik kor = BatNet.Korisnici.Find(k => k.ID.Equals(idKontakata[j]));
+                            if (kor != null) listaKontakata.Add(kor);
+                        }
+                        Korisnik kori = BatNet.Korisnici.Find(x => x.ID.Equals(users.ElementAt(i).id));
+                        kori.Kontakti = listaKontakata;
+                    }
                 }
             }
         }
@@ -71,6 +128,9 @@ namespace Mreza
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            ucitajKorisnike();
+            ucitajProjekte();
+            dodajKontakte();
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,

@@ -132,7 +132,7 @@ namespace Mreza.Mreza_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[26];
+            _typeNameTable = new string[28];
             _typeNameTable[0] = "Mreza.ViewModel.AdministratorViewModel";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "System.Windows.Input.ICommand";
@@ -158,9 +158,11 @@ namespace Mreza.Mreza_XamlTypeInfo
             _typeNameTable[22] = "Mreza.View.AdminPanel";
             _typeNameTable[23] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[24] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[25] = "Mreza.View.MainPage";
+            _typeNameTable[25] = "Mreza.ViewModel.LoginRegistracijaViewModel";
+            _typeNameTable[26] = "System.DateTimeOffset";
+            _typeNameTable[27] = "Mreza.View.MainPage";
 
-            _typeTable = new global::System.Type[26];
+            _typeTable = new global::System.Type[28];
             _typeTable[0] = typeof(global::Mreza.ViewModel.AdministratorViewModel);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::System.Windows.Input.ICommand);
@@ -186,7 +188,9 @@ namespace Mreza.Mreza_XamlTypeInfo
             _typeTable[22] = typeof(global::Mreza.View.AdminPanel);
             _typeTable[23] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[24] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[25] = typeof(global::Mreza.View.MainPage);
+            _typeTable[25] = typeof(global::Mreza.ViewModel.LoginRegistracijaViewModel);
+            _typeTable[26] = typeof(global::System.DateTimeOffset);
+            _typeTable[27] = typeof(global::Mreza.View.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -229,7 +233,8 @@ namespace Mreza.Mreza_XamlTypeInfo
         private object Activate_17_List() { return new global::System.Collections.Generic.List<global::Mreza.Model.Poruka>(); }
         private object Activate_19_List() { return new global::System.Collections.Generic.List<global::Mreza.Model.Projekat>(); }
         private object Activate_22_AdminPanel() { return new global::Mreza.View.AdminPanel(); }
-        private object Activate_25_MainPage() { return new global::Mreza.View.MainPage(); }
+        private object Activate_25_LoginRegistracijaViewModel() { return new global::Mreza.ViewModel.LoginRegistracijaViewModel(); }
+        private object Activate_27_MainPage() { return new global::Mreza.View.MainPage(); }
         private void VectorAdd_3_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Mreza.Model.Korisnik>)instance;
@@ -325,6 +330,7 @@ namespace Mreza.Mreza_XamlTypeInfo
                 userType.AddMemberName("Notifikacije");
                 userType.AddMemberName("Poruke");
                 userType.AddMemberName("Projekti");
+                userType.AddMemberName("Obrisan");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -440,6 +446,8 @@ namespace Mreza.Mreza_XamlTypeInfo
                 userType.AddMemberName("DatumZavrsetka");
                 userType.AddMemberName("Tehnologije");
                 userType.AddMemberName("Aktivan");
+                userType.AddMemberName("Obrisan");
+                userType.AddMemberName("ID1");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -463,9 +471,35 @@ namespace Mreza.Mreza_XamlTypeInfo
                 xamlType = new global::Mreza.Mreza_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 25:   //  Mreza.View.MainPage
+            case 25:   //  Mreza.ViewModel.LoginRegistracijaViewModel
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_25_LoginRegistracijaViewModel;
+                userType.AddMemberName("PrijaviSe");
+                userType.AddMemberName("RegistrujSe");
+                userType.AddMemberName("OdaberiSliku");
+                userType.AddMemberName("PrivatanProfil");
+                userType.AddMemberName("Username");
+                userType.AddMemberName("Password");
+                userType.AddMemberName("Naziv");
+                userType.AddMemberName("Email");
+                userType.AddMemberName("Potvrda");
+                userType.AddMemberName("UsernameRegistracija");
+                userType.AddMemberName("PasswordRegistracija");
+                userType.AddMemberName("Datum");
+                userType.AddMemberName("PathSlike");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 26:   //  System.DateTimeOffset
+                userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 27:   //  Mreza.View.MainPage
                 userType = new global::Mreza.Mreza_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_25_MainPage;
+                userType.Activator = Activate_27_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -518,6 +552,11 @@ namespace Mreza.Mreza_XamlTypeInfo
         {
             var that = (global::Mreza.Model.Korisnik)instance;
             return that.ID;
+        }
+        private void set_4_Korisnik_ID(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.ID = (global::System.Int32)Value;
         }
         private object get_5_Korisnik_EMail(object instance)
         {
@@ -799,45 +838,205 @@ namespace Mreza.Mreza_XamlTypeInfo
             var that = (global::Mreza.Model.Projekat)instance;
             that.Aktivan = (global::System.Boolean)Value;
         }
-        private object get_33_AdministratorViewModel_Projekti(object instance)
+        private object get_33_Projekat_Obrisan(object instance)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            return that.Obrisan;
+        }
+        private void set_33_Projekat_Obrisan(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            that.Obrisan = (global::System.Boolean)Value;
+        }
+        private object get_34_Projekat_ID1(object instance)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            return that.ID1;
+        }
+        private void set_34_Projekat_ID1(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Projekat)instance;
+            that.ID1 = (global::System.String)Value;
+        }
+        private object get_35_Korisnik_Obrisan(object instance)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            return that.Obrisan;
+        }
+        private void set_35_Korisnik_Obrisan(object instance, object Value)
+        {
+            var that = (global::Mreza.Model.Korisnik)instance;
+            that.Obrisan = (global::System.Boolean)Value;
+        }
+        private object get_36_AdministratorViewModel_Projekti(object instance)
         {
             var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
             return that.Projekti;
         }
-        private void set_33_AdministratorViewModel_Projekti(object instance, object Value)
+        private void set_36_AdministratorViewModel_Projekti(object instance, object Value)
         {
             var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
             that.Projekti = (global::System.Collections.Generic.List<global::Mreza.Model.Projekat>)Value;
         }
-        private object get_34_AdministratorViewModel_Kor(object instance)
+        private object get_37_AdministratorViewModel_Kor(object instance)
         {
             var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
             return that.Kor;
         }
-        private void set_34_AdministratorViewModel_Kor(object instance, object Value)
+        private void set_37_AdministratorViewModel_Kor(object instance, object Value)
         {
             var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
             that.Kor = (global::Mreza.Model.Korisnik)Value;
         }
-        private object get_35_AdministratorViewModel_Pro(object instance)
+        private object get_38_AdministratorViewModel_Pro(object instance)
         {
             var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
             return that.Pro;
         }
-        private void set_35_AdministratorViewModel_Pro(object instance, object Value)
+        private void set_38_AdministratorViewModel_Pro(object instance, object Value)
         {
             var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
             that.Pro = (global::Mreza.Model.Projekat)Value;
         }
-        private object get_36_AdministratorViewModel_Por(object instance)
+        private object get_39_AdministratorViewModel_Por(object instance)
         {
             var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
             return that.Por;
         }
-        private void set_36_AdministratorViewModel_Por(object instance, object Value)
+        private void set_39_AdministratorViewModel_Por(object instance, object Value)
         {
             var that = (global::Mreza.ViewModel.AdministratorViewModel)instance;
             that.Por = (global::Mreza.Model.Poruka)Value;
+        }
+        private object get_40_LoginRegistracijaViewModel_PrijaviSe(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.PrijaviSe;
+        }
+        private void set_40_LoginRegistracijaViewModel_PrijaviSe(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.PrijaviSe = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_41_LoginRegistracijaViewModel_RegistrujSe(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.RegistrujSe;
+        }
+        private void set_41_LoginRegistracijaViewModel_RegistrujSe(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.RegistrujSe = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_42_LoginRegistracijaViewModel_OdaberiSliku(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.OdaberiSliku;
+        }
+        private void set_42_LoginRegistracijaViewModel_OdaberiSliku(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.OdaberiSliku = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_43_LoginRegistracijaViewModel_PrivatanProfil(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.PrivatanProfil;
+        }
+        private void set_43_LoginRegistracijaViewModel_PrivatanProfil(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.PrivatanProfil = (global::System.Boolean)Value;
+        }
+        private object get_44_LoginRegistracijaViewModel_Username(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.Username;
+        }
+        private void set_44_LoginRegistracijaViewModel_Username(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.Username = (global::System.String)Value;
+        }
+        private object get_45_LoginRegistracijaViewModel_Password(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.Password;
+        }
+        private void set_45_LoginRegistracijaViewModel_Password(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.Password = (global::System.String)Value;
+        }
+        private object get_46_LoginRegistracijaViewModel_Naziv(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.Naziv;
+        }
+        private void set_46_LoginRegistracijaViewModel_Naziv(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.Naziv = (global::System.String)Value;
+        }
+        private object get_47_LoginRegistracijaViewModel_Email(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.Email;
+        }
+        private void set_47_LoginRegistracijaViewModel_Email(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.Email = (global::System.String)Value;
+        }
+        private object get_48_LoginRegistracijaViewModel_Potvrda(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.Potvrda;
+        }
+        private void set_48_LoginRegistracijaViewModel_Potvrda(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.Potvrda = (global::System.String)Value;
+        }
+        private object get_49_LoginRegistracijaViewModel_UsernameRegistracija(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.UsernameRegistracija;
+        }
+        private void set_49_LoginRegistracijaViewModel_UsernameRegistracija(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.UsernameRegistracija = (global::System.String)Value;
+        }
+        private object get_50_LoginRegistracijaViewModel_PasswordRegistracija(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.PasswordRegistracija;
+        }
+        private void set_50_LoginRegistracijaViewModel_PasswordRegistracija(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.PasswordRegistracija = (global::System.String)Value;
+        }
+        private object get_51_LoginRegistracijaViewModel_Datum(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.Datum;
+        }
+        private void set_51_LoginRegistracijaViewModel_Datum(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.Datum = (global::System.DateTimeOffset)Value;
+        }
+        private object get_52_LoginRegistracijaViewModel_PathSlike(object instance)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            return that.PathSlike;
+        }
+        private void set_52_LoginRegistracijaViewModel_PathSlike(object instance, object Value)
+        {
+            var that = (global::Mreza.ViewModel.LoginRegistracijaViewModel)instance;
+            that.PathSlike = (global::System.String)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -875,7 +1074,7 @@ namespace Mreza.Mreza_XamlTypeInfo
                 userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
                 xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "ID", "Int32");
                 xamlMember.Getter = get_4_Korisnik_ID;
-                xamlMember.SetIsReadOnly();
+                xamlMember.Setter = set_4_Korisnik_ID;
                 break;
             case "Mreza.Model.Korisnik.EMail":
                 userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
@@ -1045,29 +1244,125 @@ namespace Mreza.Mreza_XamlTypeInfo
                 xamlMember.Getter = get_32_Projekat_Aktivan;
                 xamlMember.Setter = set_32_Projekat_Aktivan;
                 break;
+            case "Mreza.Model.Projekat.Obrisan":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Projekat");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Obrisan", "Boolean");
+                xamlMember.Getter = get_33_Projekat_Obrisan;
+                xamlMember.Setter = set_33_Projekat_Obrisan;
+                break;
+            case "Mreza.Model.Projekat.ID1":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Projekat");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "ID1", "String");
+                xamlMember.Getter = get_34_Projekat_ID1;
+                xamlMember.Setter = set_34_Projekat_ID1;
+                break;
+            case "Mreza.Model.Korisnik.Obrisan":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.Model.Korisnik");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Obrisan", "Boolean");
+                xamlMember.Getter = get_35_Korisnik_Obrisan;
+                xamlMember.Setter = set_35_Korisnik_Obrisan;
+                break;
             case "Mreza.ViewModel.AdministratorViewModel.Projekti":
                 userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
                 xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Projekti", "System.Collections.Generic.List`1<Mreza.Model.Projekat>");
-                xamlMember.Getter = get_33_AdministratorViewModel_Projekti;
-                xamlMember.Setter = set_33_AdministratorViewModel_Projekti;
+                xamlMember.Getter = get_36_AdministratorViewModel_Projekti;
+                xamlMember.Setter = set_36_AdministratorViewModel_Projekti;
                 break;
             case "Mreza.ViewModel.AdministratorViewModel.Kor":
                 userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
                 xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Kor", "Mreza.Model.Korisnik");
-                xamlMember.Getter = get_34_AdministratorViewModel_Kor;
-                xamlMember.Setter = set_34_AdministratorViewModel_Kor;
+                xamlMember.Getter = get_37_AdministratorViewModel_Kor;
+                xamlMember.Setter = set_37_AdministratorViewModel_Kor;
                 break;
             case "Mreza.ViewModel.AdministratorViewModel.Pro":
                 userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
                 xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Pro", "Mreza.Model.Projekat");
-                xamlMember.Getter = get_35_AdministratorViewModel_Pro;
-                xamlMember.Setter = set_35_AdministratorViewModel_Pro;
+                xamlMember.Getter = get_38_AdministratorViewModel_Pro;
+                xamlMember.Setter = set_38_AdministratorViewModel_Pro;
                 break;
             case "Mreza.ViewModel.AdministratorViewModel.Por":
                 userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.AdministratorViewModel");
                 xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Por", "Mreza.Model.Poruka");
-                xamlMember.Getter = get_36_AdministratorViewModel_Por;
-                xamlMember.Setter = set_36_AdministratorViewModel_Por;
+                xamlMember.Getter = get_39_AdministratorViewModel_Por;
+                xamlMember.Setter = set_39_AdministratorViewModel_Por;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.PrijaviSe":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "PrijaviSe", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_40_LoginRegistracijaViewModel_PrijaviSe;
+                xamlMember.Setter = set_40_LoginRegistracijaViewModel_PrijaviSe;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.RegistrujSe":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "RegistrujSe", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_41_LoginRegistracijaViewModel_RegistrujSe;
+                xamlMember.Setter = set_41_LoginRegistracijaViewModel_RegistrujSe;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.OdaberiSliku":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "OdaberiSliku", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_42_LoginRegistracijaViewModel_OdaberiSliku;
+                xamlMember.Setter = set_42_LoginRegistracijaViewModel_OdaberiSliku;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.PrivatanProfil":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "PrivatanProfil", "Boolean");
+                xamlMember.Getter = get_43_LoginRegistracijaViewModel_PrivatanProfil;
+                xamlMember.Setter = set_43_LoginRegistracijaViewModel_PrivatanProfil;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.Username":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Username", "String");
+                xamlMember.Getter = get_44_LoginRegistracijaViewModel_Username;
+                xamlMember.Setter = set_44_LoginRegistracijaViewModel_Username;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.Password":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Password", "String");
+                xamlMember.Getter = get_45_LoginRegistracijaViewModel_Password;
+                xamlMember.Setter = set_45_LoginRegistracijaViewModel_Password;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.Naziv":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Naziv", "String");
+                xamlMember.Getter = get_46_LoginRegistracijaViewModel_Naziv;
+                xamlMember.Setter = set_46_LoginRegistracijaViewModel_Naziv;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.Email":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Email", "String");
+                xamlMember.Getter = get_47_LoginRegistracijaViewModel_Email;
+                xamlMember.Setter = set_47_LoginRegistracijaViewModel_Email;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.Potvrda":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Potvrda", "String");
+                xamlMember.Getter = get_48_LoginRegistracijaViewModel_Potvrda;
+                xamlMember.Setter = set_48_LoginRegistracijaViewModel_Potvrda;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.UsernameRegistracija":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "UsernameRegistracija", "String");
+                xamlMember.Getter = get_49_LoginRegistracijaViewModel_UsernameRegistracija;
+                xamlMember.Setter = set_49_LoginRegistracijaViewModel_UsernameRegistracija;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.PasswordRegistracija":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "PasswordRegistracija", "String");
+                xamlMember.Getter = get_50_LoginRegistracijaViewModel_PasswordRegistracija;
+                xamlMember.Setter = set_50_LoginRegistracijaViewModel_PasswordRegistracija;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.Datum":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "Datum", "System.DateTimeOffset");
+                xamlMember.Getter = get_51_LoginRegistracijaViewModel_Datum;
+                xamlMember.Setter = set_51_LoginRegistracijaViewModel_Datum;
+                break;
+            case "Mreza.ViewModel.LoginRegistracijaViewModel.PathSlike":
+                userType = (global::Mreza.Mreza_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mreza.ViewModel.LoginRegistracijaViewModel");
+                xamlMember = new global::Mreza.Mreza_XamlTypeInfo.XamlMember(this, "PathSlike", "String");
+                xamlMember.Getter = get_52_LoginRegistracijaViewModel_PathSlike;
+                xamlMember.Setter = set_52_LoginRegistracijaViewModel_PathSlike;
                 break;
             }
             return xamlMember;

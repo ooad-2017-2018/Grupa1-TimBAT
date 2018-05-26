@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Navigation;
 using Microsoft.WindowsAzure.MobileServices;
 using Windows.UI.Popups;
 using Mreza.Azure;
+using Mreza.Model;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,10 +29,6 @@ namespace Mreza.View
 
     public sealed partial class MainPage : Page
     {
-
-
-        IMobileServiceTable<Korisnici> userTableObj = App.MobileService.GetTable<Korisnici>();
-
         public MainPage()
         {
             this.InitializeComponent();
@@ -65,22 +62,6 @@ namespace Mreza.View
 
         private void Registruj_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Korisnici obj = new Korisnici();
-
-
-                userTableObj.InsertAsync(obj);
-
-                MessageDialog msgDialog = new MessageDialog("Registracija uspjesna. Dobrodosli u BatNet :)");
-
-                msgDialog.ShowAsync();
-            }
-            catch (Exception ex)
-            {
-                MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
-                msgDialogError.ShowAsync();
-            }
         }
     }
 }
