@@ -13,10 +13,10 @@ namespace ASPBatNet.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Profil()
         {
             ViewBag.Message = "Your application description page.";
-
+            
             return View();
         }
 

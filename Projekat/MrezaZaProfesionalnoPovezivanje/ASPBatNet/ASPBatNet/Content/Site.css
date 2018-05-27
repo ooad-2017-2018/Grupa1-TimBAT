@@ -3,6 +3,7 @@
     padding-bottom: 20px;
     background-image: url('Images/pozadina.jpg');
     background-size: cover;
+    background-repeat:no-repeat;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -40,6 +41,12 @@ div#podaci {
 #login {
     width:50%;
     margin:0% 25% 0% 25%;
+    vertical-align:central;
+}
+
+#login {
+    font-size:x-large;
+    display:block;
 }
 
 #greetingMessage {
@@ -50,3 +57,18 @@ div#podaci {
     margin-top:20%;
 }
 
+#search {
+    display:inline;
+    height: 80%;
+    margin:1% 0% 0% 15%;
+}
+
+#searchbutton {
+    display:inline;
+    position:absolute;
+    margin-top:0.50%;
+}
+
+nav {
+    width:100%;
+}

@@ -2,17 +2,24 @@
     ViewBag.Title = "Login";
 }
 
-<div class="jumbotron">
+<div class="container">
     <h1 id="greetingMessage">Dobrodošli na BatNet!</h1>
     <div id="podaci">
         <form>
             <input placeholder="Username" type="text" id="username" class="form-control input-lg"/> <br/>
             <input placeholder="Password" type="password" id="password" class="form-control input-lg"/> <br/>
-            <input type="submit" id="login" class="btn btn-info input-lg"/>
+            <a href="~/Home/Profil" id="login" class="btn btn-info input-lg">Prijavi se</a>
         </form>
 
     </div>
 </div>
+
+<script>
+    function myFunction() {
+        //window.location.replace("https://www.w3schools.com/html/html_forms.asp");
+        window.location = 'http://www.redirectedsite.com';
+}
+</script>
 
 <!--<div class="row" id="podaci">
     <div class="col-md-4">
@@ -35,3 +42,6 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>-->
+
+
+

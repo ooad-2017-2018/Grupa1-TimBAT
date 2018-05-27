@@ -180,7 +180,17 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\LockScreenLogo.scale-200.png" />
+    <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\pozadina.jpg" />
+    <Content Include="Content\Images\profilna.png" />
+    <Content Include="Content\Images\SplashScreen.scale-200.png" />
+    <Content Include="Content\Images\Square150x150Logo.scale-200.png" />
+    <Content Include="Content\Images\Square44x44Logo.scale-200.png" />
+    <Content Include="Content\Images\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Content\Images\StoreLogo.png" />
+    <Content Include="Content\Images\webcam.png" />
+    <Content Include="Content\Images\Wide310x150Logo.scale-200.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -192,6 +202,7 @@
     </Content>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\indexPage.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -213,7 +224,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Profil.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
