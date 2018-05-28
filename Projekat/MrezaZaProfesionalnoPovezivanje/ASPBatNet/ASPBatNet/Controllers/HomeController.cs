@@ -13,10 +13,11 @@ namespace ASPBatNet.Controllers
             return View();
         }
 
-        public ActionResult Profil()
+        public ActionResult Profil(string username, string password)
         {
-            ViewBag.Message = "Your application description page.";
-            
+            System.Diagnostics.Debug.WriteLine(username + " " + password);
+            if (username.Equals("Adnan"))
+                return View("~/Views/Home/Index.cshtml");
             return View();
         }
 
