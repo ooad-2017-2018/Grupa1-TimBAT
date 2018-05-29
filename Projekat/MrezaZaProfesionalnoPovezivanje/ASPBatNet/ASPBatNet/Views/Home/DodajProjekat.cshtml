@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "Kreiraj projekat";
+}
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("BatNet", "Profil", "Home", null, new { @class = "navbar-brand" });
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <div class="col-md-2"></div>
+            <div class="col-sm-4 col-md-4">
+                <form class="navbar-form" role="search">
+                    <div class="input-group" style="height:3.5vh">
+                        <input type="text" class="form-control" placeholder="Pretraži" name="srch-term" id="srch-term" style="height:100%;" />
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit" style="height:100%;"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3">
+                <a href="@Url.Action("Profil", "Home")">
+                    <img src="http://cdn-img.instyle.com/sites/default/files/styles/684xflex/public/images/2010/gallery/110910-Hermione-2-400_0.jpg?itok=eBzDXJZi" style="height: 3.5vh; width: 3.5vh; margin-top:1vh; float:right; border-radius:2vh;" />
+                </a>
+            </div>
+            <div class="col-md-1">
+                <div class="dropdown">
+                    <img src="~/Content/Images/alert.png" class="dropdown-toggle btn" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="height:3.5vh; width:5vh; text-decoration:none; color:white; cursor:pointer; margin-top:1vh; background-color:snow; border-radius:2vh;"><span class="caret"></span></img>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Primjer notifikacije</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div>
+                    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                    {
+                        <button type="submit" class="btn btn-danger" style="margin-top:1vh;">Odjavi se</button>
+                    }
+                </div>
+            </div>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="row" style="padding-top:5vh">
+    <div class="col-lg-6">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 panel">
+            <div>
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10" style="text-align:center">
+                        <h4>Osnovne informacije</h4>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10 col-lg-push-1">
+                        <input type="text" placeholder="Naziv projekta" class="form-control input-lg" /> <br />
+                        <textarea placeholder="Opis projekta" cols="20" class="form-control input-lg">Opis projekta</textarea>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+                <div class="row" style="margin:5vh 0vh 5vh 0vh;">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8" style="background-color:rgba(255,255,255,0.5); border-radius: 2vh;">
+                        <div>
+                            <div class="row" style="margin-top:1vh; margin-bottom:1vh">
+                                <div class="col-lg-6">
+                                    <input type="radio" class="radio-inline" name="grupa1" value="C" /> <p class="radio-inline">C</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="radio" class="radio-inline" name="grupa1" value="Kotlin" /> <p class="radio-inline">Kotlin</p>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom:1vh">
+                                <div class="col-lg-6">
+                                    <input type="radio" class="radio-inline" name="grupa1" value="C++" /> <p class="radio-inline">C++</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="radio" class="radio-inline" name="grupa1" value="Piet" /> <p class="radio-inline">Piet</p>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom:1vh">
+                                <div class="col-lg-6">
+                                    <input type="radio" class="radio-inline" name="grupa1" value="VHDL" /> <p class="radio-inline">VHDL</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="radio" class="radio-inline" name="grupa1" value="BASH" /> <p class="radio-inline">BASH</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="row" style="padding-bottom:2vh;">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-default" style="width:100%;">Dodaj alternativni jezik</button>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 panel">
+            <div class="row" style="margin:2vh 0vh 2vh 0vh;">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10" style="background-color:rgba(255,255,255,0.5); border-radius: 2vh; overflow-x:auto; overflow-y:hidden; min-height:32vh; max-height:32vh;">
+                    <div style="margin-top:2vh; margin-bottom:2vh; cursor:pointer">
+                        <input type="checkbox" class="checkbox-inline" />
+                        <p class="checkbox-inline">Korisnik 1</p>
+                        <hr />
+                        <input type="checkbox" class="checkbox-inline" />
+                        <p class="checkbox-inline">Korisnik 2</p>
+                        <hr />
+                        <input type="checkbox" class="checkbox-inline" />
+                        <p class="checkbox-inline">Korisnik 3</p>
+                        <hr />
+                        <input type="checkbox" class="checkbox-inline" />
+                        <p class="checkbox-inline">Korisnik 4</p>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+            <div class="row" style="margin-bottom:2vh">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-4">
+                    @Html.ActionLink("Potvrdi", "Profil", "Home", null, new { @class = "btn btn-success" });
+                </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4">
+                    <button class="btn btn-warning">Odustani</button>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>

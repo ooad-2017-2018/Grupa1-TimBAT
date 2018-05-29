@@ -16,14 +16,14 @@ namespace ASPBatNet.Controllers
         public ActionResult Profil(string username, string password)
         {
             System.Diagnostics.Debug.WriteLine(username + " " + password);
-            if (username.Equals("Adnan"))
-                return View("~/Views/Home/Index.cshtml");
+            /*if (username.Equals("Adnan"))
+                return View("~/Views/Home/Index.cshtml");*/
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult DodajProjekat()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Dodajte projekte.";
 
             return View();
         }

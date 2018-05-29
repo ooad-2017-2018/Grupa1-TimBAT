@@ -11,35 +11,40 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">BatNet</a>
+            @Html.ActionLink("BatNet", "Profil", "Home", null, new { @class = "navbar-brand" });
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav col-sm-3 col-md-3">
-                <li class="active"><a href="#">Profil</a></li>
-                <li><a href="#about">Projekti</a></li>
-                <!--<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>-->
-            </ul>
-
+            <div class="col-md-2"></div>
             <div class="col-sm-4 col-md-4">
                 <form class="navbar-form" role="search">
                     <div class="input-group" style="height:3.5vh">
-                        <input type="text" class="form-control" placeholder="Pretraži" name="srch-term" id="srch-term" style="height:100%;"/>
+                        <input type="text" class="form-control" placeholder="Pretraži" name="srch-term" id="srch-term" style="height:100%;" />
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit" style="height:100%;"><i class="glyphicon glyphicon-search"></i></button>
                         </div>
                     </div>
                 </form>
+            </div>
+            <div class="col-md-3">
+                <a href="@Url.Action("Profil", "Home")">
+                    <img src="http://cdn-img.instyle.com/sites/default/files/styles/684xflex/public/images/2010/gallery/110910-Hermione-2-400_0.jpg?itok=eBzDXJZi" style="height: 3.5vh; width: 3.5vh; margin-top:1vh; float:right; border-radius:2vh;" />
+                </a>
+            </div>
+            <div class="col-md-1">
+                <div class="dropdown">
+                    <img src="~/Content/Images/alert.png" class="dropdown-toggle btn" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="height:3.5vh; width:5vh; text-decoration:none; color:white; cursor:pointer; margin-top:1vh; background-color:snow; border-radius:2vh;"><span class="caret"></span></img>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Primjer notifikacije</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div>
+                    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                    {
+                        <button type="submit" class="btn btn-danger" style="margin-top:1vh;">Odjavi se</button>
+                    }
+                </div>
             </div>
         </div><!--/.nav-collapse -->
     </div>
@@ -68,8 +73,15 @@
             <div class="row">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">
-                    <button class="btn btn-left btn-profile">Moji kodovi</button>
-                    <button class="btn btn-right btn-profile">Dodaj projekat</button>
+                    <button class="btn btn-left btn-profile">
+                        <a href="https://github.com" style="color:black; text-decoration:none;">Moji kodovi</a>
+                    </button>
+                    
+                    <!-- Koji li se retard sjetio ovih sranja Boze... -->
+                    @using (Html.BeginForm("DodajProjekat", "Home", FormMethod.Post))
+    {
+                <button type="submit" class="btn btn-right btn-profile">Dodaj projekat</button>
+}
                 </div>
                 <div class="col-lg-2"></div>
             </div>
@@ -95,7 +107,18 @@
                     <div class="col-lg-1"></div>
                     <div class="col-lg-10">
                         <div>
-                            <button class="btn btn-left btn-profile">Dodaj CV</button>
+                            <div class="btn btn-left btn-profile" style="display:inline; width:3vh; height: 1.5vh; background-color:lightgray;">
+                                <div class="row" style="opacity:0; font-size:0.5vh;">
+                                    Pomjeri se!
+                                </div>
+                                <div class="row">
+                                    Dodaj CV
+                                </div>
+                                <div class="row">
+                                    <input type="file" style="display:inline; opacity:0; cursor:pointer;" title="Dodaj CV" />
+                                </div>
+                                
+                            </div>
                             <button class="btn btn-right btn-profile">Uredi</button>
                         </div>
                     </div>
