@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Controls;
 using Mreza.View;
 using Mreza.Azure;
 using Microsoft.WindowsAzure.MobileServices;
+using Windows.Media.Capture;
+using Windows.Storage;
 
 namespace Mreza.ViewModel
 {
@@ -20,6 +22,7 @@ namespace Mreza.ViewModel
         public ICommand PrijaviSe { get; set; }
         public ICommand RegistrujSe { get; set; }
         public ICommand OdaberiSliku { get; set; }
+        public ICommand PozoviKameru { get; set; }
         public Boolean PrivatanProfil { get; set; }
         public String Username { get; set; }
         public String Password { get; set; }
@@ -35,8 +38,29 @@ namespace Mreza.ViewModel
             PrijaviSe = new RelayCommand<object>(prijavaAsync, mogucaPrijava);
             RegistrujSe = new RelayCommand<object>(registracijaAsync, mogucaRegistracija);
             OdaberiSliku = new RelayCommand<object>(odabirSlikeAsync, mogucOdabirSlike);
+            PozoviKameru = new RelayCommand<object>(kameraAsync, mogucaKamera);
             //System.Diagnostics.Debug.WriteLine("Hiii");
             PathSlike = "/Assets/profilna.png";
+        }
+
+        public async void kameraAsync(object parameter)
+        {
+            CameraCaptureUI captureUI = new CameraCaptureUI();
+            captureUI.PhotoSettings.Format = CameraCaptureUIPhotoFormat.Jpeg;
+            
+            StorageFile photo = await captureUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
+
+            if (photo == null)
+            {
+                // korisnik prekinuo sliku
+                return;
+            }
+            // ovdje treba postaviti sliku na formu
+        }
+
+        public bool mogucaKamera(object parameter)
+        {
+            return true;
         }
 
         public async void odabirSlikeAsync(object parameter)
@@ -52,6 +76,7 @@ namespace Mreza.ViewModel
             {
                 MessageDialog greska = new MessageDialog("Greška pri odabiru slike!");
                 greska.ShowAsync();
+                return;
             }
             System.Diagnostics.Debug.WriteLine(file.Path);
             PathSlike = file.Path;

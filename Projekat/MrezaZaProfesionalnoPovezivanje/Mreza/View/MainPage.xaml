@@ -44,7 +44,8 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Content="Odaberi sliku" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding OdaberiSliku, Mode=TwoWay}"></Button>
+                <Button Content="Odaberi sliku" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding OdaberiSliku, Mode=TwoWay}"></Button>
+                <Button  Content ="Ikonica kamere ovdje" Width="180" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Command="{Binding PozoviKameru, Mode=TwoWay}"></Button>
             </Grid>
         </Border>
         <Border Grid.Row="3" Grid.Column="1" Background="White" Opacity="0.75"></Border>

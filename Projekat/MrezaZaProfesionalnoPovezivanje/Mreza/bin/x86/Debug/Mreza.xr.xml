@@ -23,6 +23,7 @@
     <RootPropertyPathName Name="PrijaviSe" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Username" />
+    <RootPropertyPathName Name="PozoviKameru" />
     <RootPropertyPathName Name="OdaberiSliku" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>

@@ -121,7 +121,6 @@ D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovez
 D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\System.Xml.XDocument.dll
 D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\System.Xml.XmlDocument.dll
 D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\bin\x86\Debug\System.Xml.XmlSerializer.dll
-D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Mreza.csprojResolveAssemblyReference.cache
 D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\App.g.i.cs
 D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\App.g.cs
 D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\XamlTypeInfo.g.cs
@@ -1336,3 +1335,4 @@ C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoP
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Mreza.csproj.GenerateResource.Cache
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Microsoft.Azure.Mobile.Client.pri.xml
 C:\Users\Hana\Desktop\OOAD projekat\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Mreza.csprojResolveAssemblyReference.cache
+D:\Users\teske\Documents\GitHub\Grupa1-TimBAT\Projekat\MrezaZaProfesionalnoPovezivanje\Mreza\obj\x86\Debug\Mreza.csprojResolveAssemblyReference.cache
