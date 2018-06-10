@@ -30,9 +30,9 @@ namespace Mreza.ViewModel
 
         public AdministratorViewModel()
         {
-            ObrisiKorisnika = new RelayCommand<object>(obrisiKorisnikaAsync, mozeLiSeObrisatiKorisnik);
-            ObrisiProjekat = new RelayCommand<object>(obrisiProjekat, mozeLiSeObrisatiProjekat);
-            PosaljiPoruku = new RelayCommand<object>(posaljiPoruku, mozeLiSePoslatiPoruka);
+            ObrisiKorisnika = new RelayCommand<object>(ObrisiKorisnikaAsync, MozeLiSeObrisatiKorisnik);
+            ObrisiProjekat = new RelayCommand<object>(ObrisiProjekt, OmogucenoBrisanjeProjekta);
+            PosaljiPoruku = new RelayCommand<object>(Posaljipp, OmogucenoSlanjePoruka);
             Korisnici = new ObservableCollection<Korisnik>();
             foreach(Korisnik k in BatNet.Korisnici)
             {
@@ -45,7 +45,7 @@ namespace Mreza.ViewModel
             Projekti = BatNet.Projekti;
         }
 
-        public async void obrisiKorisnikaAsync(object parametar)
+        public async void ObrisiKorisnikaAsync(object parametar)
         {
             if (Kor == null) return;
             IMobileServiceTable<Korisnici> usersTable = App.MobileService.GetTable<Korisnici>();
@@ -90,17 +90,17 @@ namespace Mreza.ViewModel
                     Korisnici.Remove(Kor);
                     BatNet.Korisnici.Remove(Kor);
                     MessageDialog messageDialog = new MessageDialog("Korisnik obrisan!");
-                    messageDialog.ShowAsync();
+                    await messageDialog.ShowAsync();
                 }
             }
         }
 
-        public bool mozeLiSeObrisatiKorisnik(object parametar)
+        public bool MozeLiSeObrisatiKorisnik(object parametar)
         {
             return true;
         }
 
-        public async void obrisiProjekat(object parametar)
+        public async void ObrisiProjekt(object parametar)
         {
             IMobileServiceTable<Projekti> usersTable = App.MobileService.GetTable<Projekti>();
             if (Pro == null) return;
@@ -129,12 +129,12 @@ namespace Mreza.ViewModel
             await usersTable.UpdateAsync(projekat.ElementAt(0));
         }
 
-        public bool mozeLiSeObrisatiProjekat(object parametar)
+        public bool OmogucenoBrisanjeProjekta(object parametar)
         {
             return true;
         }
 
-        public void posaljiPoruku(object parametar)
+        public void Posaljipp(object parametar)
         {
             if(Kor != null && !String.IsNullOrEmpty(Por))
             {
@@ -150,7 +150,7 @@ namespace Mreza.ViewModel
             }
         }
 
-        public bool mozeLiSePoslatiPoruka(object parametar)
+        public bool OmogucenoSlanjePoruka(object parametar)
         {
             return true;
         }

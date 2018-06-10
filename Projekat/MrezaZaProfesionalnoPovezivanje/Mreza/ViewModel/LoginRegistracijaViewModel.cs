@@ -40,10 +40,10 @@ namespace Mreza.ViewModel
         public String PathSlike { get; set; }
         public LoginRegistracijaViewModel()
         {
-            PrijaviSe = new RelayCommand<object>(prijavaAsync, mogucaPrijava);
-            RegistrujSe = new RelayCommand<object>(registracijaAsync, mogucaRegistracija);
-            OdaberiSliku = new RelayCommand<object>(odabirSlikeAsync, mogucOdabirSlike);
-            PozoviKameru = new RelayCommand<object>(kameraAsync, mogucaKamera);
+            PrijaviSe = new RelayCommand<object>(PrijavaAsync, OmogucenaPrijava);
+            RegistrujSe = new RelayCommand<object>(RegistracijaAsync, OmogucenaRegistracija);
+            OdaberiSliku = new RelayCommand<object>(OdabirSlikeAsync, OmogucenOdabirSlike);
+            PozoviKameru = new RelayCommand<object>(KameraAsync, OmogucenaKamera);
             BitmapImage img = new BitmapImage();
             Uri uri = new Uri("ms-appx:///Assets/profilna.png");
             img.UriSource = uri;
@@ -51,44 +51,46 @@ namespace Mreza.ViewModel
             System.Diagnostics.Debug.WriteLine("Hiii");
         }
 
-        public async void kameraAsync(object parameter)
+        public async void KameraAsync(object parameter)
         {
-            CameraCaptureUI captureUI = new CameraCaptureUI();
-            captureUI.PhotoSettings.Format = CameraCaptureUIPhotoFormat.Jpeg;
+            CameraCaptureUI KameraUI = new CameraCaptureUI();
+            KameraUI.PhotoSettings.Format = CameraCaptureUIPhotoFormat.Jpeg;
             
-            StorageFile photo = await captureUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
+            StorageFile SlikaKamera = await KameraUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
 
-            if (photo == null)
+            if (SlikaKamera == null)
             {
                 // korisnik prekinuo sliku
                 return;
             }
             else
             {
-                using (Windows.Storage.Streams.IRandomAccessStream fileStream = await photo.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                using (Windows.Storage.Streams.IRandomAccessStream fileStream = await SlikaKamera.OpenAsync(Windows.Storage.FileAccessMode.Read))
                 {
-                    Windows.UI.Xaml.Media.Imaging.BitmapImage img = new Windows.UI.Xaml.Media.Imaging.BitmapImage();
-                    img.SetSource(fileStream);
-                    PathSlike = Convert.ToString(img.UriSource);
+                    Windows.UI.Xaml.Media.Imaging.BitmapImage SlikaBitMapa = new Windows.UI.Xaml.Media.Imaging.BitmapImage();
+                    SlikaBitMapa.SetSource(fileStream);
+                    PathSlike = Convert.ToString(SlikaBitMapa.UriSource);
                 }
             }
         }
 
-        public bool mogucaKamera(object parameter)
+        public bool OmogucenaKamera(object parameter)
         {
             return true;
         }
 
-        public async void odabirSlikeAsync(object parameter)
+        public async void OdabirSlikeAsync(object parameter)
         {
-            var picker = new Windows.Storage.Pickers.FileOpenPicker();
-            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
-            picker.FileTypeFilter.Add(".jpg");
-            picker.FileTypeFilter.Add(".jpeg");
-            picker.FileTypeFilter.Add(".png");
-            Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
-            if(file == null)
+            var IzbornikSlike = new Windows.Storage.Pickers.FileOpenPicker
+            {
+                ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail,
+                SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary
+            };
+            IzbornikSlike.FileTypeFilter.Add(".jpg");
+            IzbornikSlike.FileTypeFilter.Add(".jpeg");
+            IzbornikSlike.FileTypeFilter.Add(".png");
+            Windows.Storage.StorageFile Slika = await IzbornikSlike.PickSingleFileAsync();
+            if(Slika == null)
             {
                 MessageDialog greska = new MessageDialog("Greška pri odabiru slike!");
                 greska.ShowAsync();
@@ -96,21 +98,21 @@ namespace Mreza.ViewModel
             }
             else
             {
-                using(Windows.Storage.Streams.IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                using(Windows.Storage.Streams.IRandomAccessStream fileStream = await Slika.OpenAsync(Windows.Storage.FileAccessMode.Read))
                 {
-                    Windows.UI.Xaml.Media.Imaging.BitmapImage img = new Windows.UI.Xaml.Media.Imaging.BitmapImage();
-                    img.SetSource(fileStream);
+                    Windows.UI.Xaml.Media.Imaging.BitmapImage SlikaBitMapa = new Windows.UI.Xaml.Media.Imaging.BitmapImage();
+                    SlikaBitMapa.SetSource(fileStream);
                     PathSlike = Convert.ToString(fileStream);
                 }
             }
         }
 
-        public bool mogucOdabirSlike(object parameter)
+        public bool OmogucenOdabirSlike(object parameter)
         {
             return true;
         }
 
-        public async void registracijaAsync(object parametar)
+        public async void RegistracijaAsync(object parametar)
         {
             IMobileServiceTable<Korisnici> userTableObj = App.MobileService.GetTable<Korisnici>();
 
@@ -120,20 +122,22 @@ namespace Mreza.ViewModel
                 {
                     try
                     {
-                        Korisnici obj = new Korisnici(); 
-                        obj.id = Convert.ToString(BatNet.Korisnici.Last().ID + 1);
-                        obj.email = Email;
-                        obj.username = UsernameRegistracija;
-                        obj.sifra = BatNet.CreateMD5(PasswordRegistracija);
-                        obj.obrisan = false;
-                        obj.naziv = Naziv;
-                        obj.datum = Datum.Date;
-                        await userTableObj.InsertAsync(obj);
-
+                        Korisnici NoviKorisnik = new Korisnici
+                        {
+                            id = Convert.ToString(BatNet.Korisnici.Last().ID + 1),
+                            email = Email,
+                            username = UsernameRegistracija,
+                            sifra = BatNet.CreateMD5(PasswordRegistracija),
+                            obrisan = false,
+                            naziv = Naziv,
+                            datum = Datum.Date
+                        };
+                        userTableObj.InsertAsync(NoviKorisnik);
+                     
                         if (PrivatanProfil)
                         {
-                            ObicniKorisnik obicni = new ObicniKorisnik(Email, UsernameRegistracija, BatNet.CreateMD5(PasswordRegistracija), null, Naziv, Datum.Date, false);
-                            BatNet.Korisnici.Add(obicni);
+                            ObicniKorisnik korisnik = new ObicniKorisnik(Email, UsernameRegistracija, BatNet.CreateMD5(PasswordRegistracija), null, Naziv, Datum.Date, false);
+                            BatNet.Korisnici.Add(korisnik);
                         }
                         else
                         {
@@ -164,12 +168,12 @@ namespace Mreza.ViewModel
             }
         }
 
-        public bool mogucaRegistracija(object parameter)
+        public bool OmogucenaRegistracija(object parameter)
         {
             return true;
         }
 
-        public async void prijavaAsync(object parametar)
+        public async void PrijavaAsync(object parametar)
         {
             if (Username == null)
             {
@@ -184,13 +188,13 @@ namespace Mreza.ViewModel
             else
             {
                 Password = BatNet.CreateMD5(Password);
-                Korisnik kor = BatNet.NadjiKorisnika(Username, Password);
-                if (kor == null)
+                Korisnik korisnikPretraga = BatNet.NadjiKorisnika(Username, Password);
+                if (korisnikPretraga == null)
                 {
                     MessageDialog Poruka = new MessageDialog("Korisnik sa unesenim podacima ne postoji.");
                     await Poruka.ShowAsync();
                 }
-                else if(kor != null && !kor.KorisnickoIme.Equals("admin"))
+                else if(korisnikPretraga != null && !korisnikPretraga.KorisnickoIme.Equals("admin"))
                 {
                     MessageDialog Poruka = new MessageDialog("Pristupite aplikaciji koristeći web interfejs!");
                     await Poruka.ShowAsync();
@@ -204,7 +208,7 @@ namespace Mreza.ViewModel
             Password = "";
         }
 
-        public bool mogucaPrijava(object parameter)
+        public bool OmogucenaPrijava(object parameter)
         {
             return true;
         }
