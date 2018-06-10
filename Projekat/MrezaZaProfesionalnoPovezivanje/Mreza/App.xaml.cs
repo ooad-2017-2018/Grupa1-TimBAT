@@ -51,6 +51,10 @@ namespace Mreza
                 {
                     BatNet.Korisnici.Add(new ObicniKorisnik(Convert.ToInt32(users.ElementAt(i).id), users.ElementAt(i).email, users.ElementAt(i).username, users.ElementAt(i).sifra, null, null, users.ElementAt(i).naziv));
                 }
+                else if(users.ElementAt(i).obrisan == true && users.ElementAt(i).username.Equals("admin"))
+                {
+                    BatNet.Korisnici.Add(new ObicniKorisnik(null, users.ElementAt(i).username, users.ElementAt(i).sifra, null, null, DateTime.Now, false));
+                }
             }
         }
 

@@ -14,11 +14,16 @@ using Mreza.Azure;
 using Microsoft.WindowsAzure.MobileServices;
 using Windows.Media.Capture;
 using Windows.Storage;
+using System.IO;
+using Windows.Storage.Streams;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Mreza.ViewModel
 {
     class LoginRegistracijaViewModel
     {
+        private byte[] buffer;
+
         public ICommand PrijaviSe { get; set; }
         public ICommand RegistrujSe { get; set; }
         public ICommand OdaberiSliku { get; set; }
@@ -39,8 +44,11 @@ namespace Mreza.ViewModel
             RegistrujSe = new RelayCommand<object>(registracijaAsync, mogucaRegistracija);
             OdaberiSliku = new RelayCommand<object>(odabirSlikeAsync, mogucOdabirSlike);
             PozoviKameru = new RelayCommand<object>(kameraAsync, mogucaKamera);
-            //System.Diagnostics.Debug.WriteLine("Hiii");
-            PathSlike = "/Assets/profilna.png";
+            BitmapImage img = new BitmapImage();
+            Uri uri = new Uri("ms-appx:///Assets/profilna.png");
+            img.UriSource = uri;
+            PathSlike = Convert.ToString(img.UriSource);
+            System.Diagnostics.Debug.WriteLine("Hiii");
         }
 
         public async void kameraAsync(object parameter)
@@ -55,7 +63,15 @@ namespace Mreza.ViewModel
                 // korisnik prekinuo sliku
                 return;
             }
-            // ovdje treba postaviti sliku na formu
+            else
+            {
+                using (Windows.Storage.Streams.IRandomAccessStream fileStream = await photo.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                {
+                    Windows.UI.Xaml.Media.Imaging.BitmapImage img = new Windows.UI.Xaml.Media.Imaging.BitmapImage();
+                    img.SetSource(fileStream);
+                    PathSlike = Convert.ToString(img.UriSource);
+                }
+            }
         }
 
         public bool mogucaKamera(object parameter)
@@ -78,8 +94,17 @@ namespace Mreza.ViewModel
                 greska.ShowAsync();
                 return;
             }
-            System.Diagnostics.Debug.WriteLine(file.Path);
-            PathSlike = file.Path;
+            else
+            {
+                using(Windows.Storage.Streams.IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                {
+                    Windows.UI.Xaml.Media.Imaging.BitmapImage img = new Windows.UI.Xaml.Media.Imaging.BitmapImage();
+                    img.SetSource(fileStream);
+                    PathSlike = Convert.ToString(fileStream);
+                    MessageDialog messageDialog = new MessageDialog(PathSlike);
+                    messageDialog.ShowAsync();
+                }
+            }
         }
 
         public bool mogucOdabirSlike(object parameter)
@@ -95,16 +120,6 @@ namespace Mreza.ViewModel
             {
                 if(PasswordRegistracija.Equals(Potvrda))
                 {
-                    if(PrivatanProfil)
-                    {
-                        ObicniKorisnik obicni = new ObicniKorisnik(Email, UsernameRegistracija, BatNet.CreateMD5(PasswordRegistracija), null, Naziv, Datum.Date, false);
-                        BatNet.Korisnici.Add(obicni);
-                    }
-                    else
-                    {
-                        Firma firma = new Firma(Email, UsernameRegistracija, BatNet.CreateMD5(PasswordRegistracija), null, Naziv, Datum.Date, false);
-                        BatNet.Korisnici.Add(firma);
-                    }
                     try
                     {
                         Korisnici obj = new Korisnici(); 
@@ -115,7 +130,18 @@ namespace Mreza.ViewModel
                         obj.obrisan = false;
                         obj.naziv = Naziv;
                         obj.datum = Datum.Date;
-                        userTableObj.InsertAsync(obj);
+                        await userTableObj.InsertAsync(obj);
+
+                        if (PrivatanProfil)
+                        {
+                            ObicniKorisnik obicni = new ObicniKorisnik(Email, UsernameRegistracija, BatNet.CreateMD5(PasswordRegistracija), null, Naziv, Datum.Date, false);
+                            BatNet.Korisnici.Add(obicni);
+                        }
+                        else
+                        {
+                            Firma firma = new Firma(Email, UsernameRegistracija, BatNet.CreateMD5(PasswordRegistracija), null, Naziv, Datum.Date, false);
+                            BatNet.Korisnici.Add(firma);
+                        }
 
                         MessageDialog msgDialog = new MessageDialog("Registracija uspjesna. Dobrodosli u BatNet :)");
 

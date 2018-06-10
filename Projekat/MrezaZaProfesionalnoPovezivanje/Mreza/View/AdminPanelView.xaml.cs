@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using Mreza;
 using Mreza.Model;
 using System.Diagnostics;
+using System.Collections.ObjectModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,13 +27,13 @@ namespace Mreza.View
     public sealed partial class AdminPanel : Page
     {
 
-        List<Korisnik> korisniciLista;
+        ObservableCollection<Korisnik> korisniciLista;
         List<Projekat> projektiLista;
         bool done1 = false, done2 = false;
 
         public AdminPanel()
         {
-            korisniciLista = new List<Korisnik>();
+            korisniciLista = new ObservableCollection<Korisnik>();
             projektiLista = new List<Projekat>();
             this.InitializeComponent();
         }
@@ -41,7 +42,7 @@ namespace Mreza.View
         {
             if (!done1)
             {
-                korisniciLista = ((List<Korisnik>)(korisnici.ItemsSource));
+                korisniciLista = ((ObservableCollection<Korisnik>)(korisnici.ItemsSource));
                 done1 = true;
             }
 
@@ -58,7 +59,7 @@ namespace Mreza.View
         {
             if (!done1)
             {
-                korisniciLista = ((List<Korisnik>)(AutoriProjekta.ItemsSource));
+                korisniciLista = ((ObservableCollection<Korisnik>)(AutoriProjekta.ItemsSource));
                 done1 = true;
             }
 

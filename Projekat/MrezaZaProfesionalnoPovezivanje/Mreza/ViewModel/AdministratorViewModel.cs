@@ -12,6 +12,7 @@ using System.Diagnostics;
 
 using Microsoft.WindowsAzure.MobileServices;
 using Windows.UI.Popups;
+using System.Collections.ObjectModel;
 
 namespace Mreza.ViewModel
 {
@@ -21,18 +22,22 @@ namespace Mreza.ViewModel
         public ICommand ObrisiKorisnika { get; set; }
         public ICommand ObrisiProjekat { get; set; }
         public ICommand PosaljiPoruku { get; set; }
-        public List<Korisnik> Korisnici { get; set; }
+        public ObservableCollection<Korisnik> Korisnici { get; set; }
         public List<Projekat> Projekti { get; set; }
         public Korisnik Kor { get; set; }
         public Projekat Pro { get; set; }
-        public Poruka Por { get; set; }
+        public String Por { get; set; }
 
         public AdministratorViewModel()
         {
             ObrisiKorisnika = new RelayCommand<object>(obrisiKorisnikaAsync, mozeLiSeObrisatiKorisnik);
             ObrisiProjekat = new RelayCommand<object>(obrisiProjekat, mozeLiSeObrisatiProjekat);
             PosaljiPoruku = new RelayCommand<object>(posaljiPoruku, mozeLiSePoslatiPoruka);
-            Korisnici = BatNet.Korisnici;
+            Korisnici = new ObservableCollection<Korisnik>();
+            foreach(Korisnik k in BatNet.Korisnici)
+            {
+                Korisnici.Add(k);
+            }
             for(int i = 0; i < Korisnici.Count; i++)
             {
                 if (Korisnici.ElementAt(i).KorisnickoIme.Equals("admin")) Korisnici.RemoveAt(i);
@@ -82,7 +87,10 @@ namespace Mreza.ViewModel
 
                     korisnik.ElementAt(0).obrisan = true;
                     await usersTable.UpdateAsync(korisnik.ElementAt(0));
-                    BatNet.Korisnici.RemoveAt(i);
+                    Korisnici.Remove(Kor);
+                    BatNet.Korisnici.Remove(Kor);
+                    MessageDialog messageDialog = new MessageDialog("Korisnik obrisan!");
+                    messageDialog.ShowAsync();
                 }
             }
         }
@@ -128,7 +136,13 @@ namespace Mreza.ViewModel
 
         public void posaljiPoruku(object parametar)
         {
-            if(Kor != null && !String.IsNullOrEmpty(Por.SadrzajPoruke)) Kor.Poruke.Add(Por);
+            if(Kor != null && !String.IsNullOrEmpty(Por))
+            {
+                Korisnik autor = BatNet.NadjiKorisnika("admin", BatNet.CreateMD5("admin"));
+                Poruka p = new Poruka(Por, autor, DateTime.Now);
+                MessageDialog messageDialog = new MessageDialog("Poruka poslana!");
+                messageDialog.ShowAsync();
+            }
             else
             {
                 MessageDialog messageDialog = new MessageDialog("Nije moguće poslati poruku bez odabira korisnika i unosa sadržaja!");

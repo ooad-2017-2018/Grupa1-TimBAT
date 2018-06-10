@@ -44,8 +44,14 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Content="Odaberi sliku" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding OdaberiSliku, Mode=TwoWay}"></Button>
-                <Button  Content ="Ikonica kamere ovdje" Width="180" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Command="{Binding PozoviKameru, Mode=TwoWay}"></Button>
+                <Button Content="Odaberi sliku" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding OdaberiSliku, Mode=TwoWay}"></Button>
+                <Button Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding PozoviKameru, Mode=TwoWay}">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="35" Width="35">
+                        <StackPanel.Background>
+                            <ImageBrush ImageSource="/Assets/webcam.png"></ImageBrush>
+                        </StackPanel.Background>
+                    </StackPanel>
+                </Button>
             </Grid>
         </Border>
         <Border Grid.Row="3" Grid.Column="1" Background="White" Opacity="0.75"></Border>
@@ -57,7 +63,11 @@
         <PasswordBox Grid.Row="0" Grid.Column="2" PlaceholderText="Password" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20, 0, 20, 0" Password="{Binding Password, Mode=TwoWay}"></PasswordBox>
         <Button Grid.Row="0" Grid.Column="3" Content="Log in" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20, 0, 20, 0" Command="{Binding PrijaviSe}"></Button>
 
-        <Image Source="{Binding PathSlike}" Grid.Row="2" Grid.Column="0" Stretch="Uniform"/>
+        <Image Grid.Row="2" Grid.Column="0" Stretch="Uniform">
+            <Image.Source>
+                <BitmapImage CreateOptions="IgnoreImageCache" UriSource="{Binding PathSlike}"/>
+            </Image.Source>
+        </Image>
         <RadioButton Content="Firma" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="25,15,0,0" IsChecked="True" Checked="RadioButton_Checked" Click="RadioButton_Click"></RadioButton>
         <RadioButton Content="Privatni profil" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,15,0,0" Checked="RadioButton_Checked_1" Click="RadioButton_Click_1" IsChecked="{Binding PrivatanProfil, Mode=TwoWay}"></RadioButton>
         <TextBox Name="nazivFirme_tb" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" PlaceholderText="Naziv firme" Margin="0, 50, 0, 0" Padding="60,3,60,0" Text="{Binding Naziv, Mode=TwoWay}" />
