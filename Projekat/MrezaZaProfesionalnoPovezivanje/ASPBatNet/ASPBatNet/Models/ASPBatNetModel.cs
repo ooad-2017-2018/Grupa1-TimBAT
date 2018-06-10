@@ -4,6 +4,8 @@ namespace ASPBatNet.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using System.Collections.Generic;
+    using System.Web.Security;
 
     public partial class ASPBatNetModel : DbContext
     {
@@ -17,6 +19,28 @@ namespace ASPBatNet.Models
         public virtual DbSet<Poruke> Poruke { get; set; }
         public virtual DbSet<Projekti> Projekti { get; set; }
         public virtual DbSet<Tehnologije> Tehnologije { get; set; }
+
+        public static List<Projekti> SviProjekti { get; set; }
+        public static List<string> Visibility { get; set; }
+
+        public static string Username { get; set; }
+        public static string Email { get; set; }
+        public static string Github_Link { get; set; }
+        public static double Bodovi { get; set; }
+        public static string Naziv { get; set; }
+        public static string Datum { get; set; }
+        public static string CV { get; set; }
+        public static string Website { get; set; }
+        public static string Kod { get; set; }
+        public static string Quote { get; set; }
+        public static string Image { get; set; }
+
+        public static List<Korisnici> Kontakti { get; set; }
+        public static List<Tehnologije> ListaTehnologija { get; set; }
+        public static List<Notifikacije> ListaNotifikacija { get; set; }
+        public static List<Poruke> ListaPoruka { get; set; }
+        public static List<Projekti> ListaProjekata { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

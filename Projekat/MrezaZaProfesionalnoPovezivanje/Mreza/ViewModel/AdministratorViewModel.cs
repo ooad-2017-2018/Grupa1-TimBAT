@@ -79,7 +79,7 @@ namespace Mreza.ViewModel
                 if (BatNet.Korisnici.ElementAt(i).KorisnickoIme == Kor.KorisnickoIme)
                 {
                     List<Korisnici> korisnik = await usersTable.Where(u => u.id == Kor.ID.ToString()).ToListAsync();
-                    if(korisnik.Count > 1)
+                    if (korisnik.Count > 1)
                     {
                         Debug.WriteLine("Big mistake! Stahp!");
                         return;
@@ -91,6 +91,7 @@ namespace Mreza.ViewModel
                     BatNet.Korisnici.Remove(Kor);
                     MessageDialog messageDialog = new MessageDialog("Korisnik obrisan!");
                     await messageDialog.ShowAsync();
+                    break;
                 }
             }
         }

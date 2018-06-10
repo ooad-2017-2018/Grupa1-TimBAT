@@ -115,7 +115,8 @@ namespace Mreza.ViewModel
         public async void RegistracijaAsync(object parametar)
         {
             IMobileServiceTable<Korisnici> userTableObj = App.MobileService.GetTable<Korisnici>();
-
+            IEnumerable<Korisnici> enumKorisnika = await userTableObj.ReadAsync();
+            List<Korisnici> sviKorisnici = enumKorisnika.ToList();
             if (!String.IsNullOrWhiteSpace(UsernameRegistracija) && !String.IsNullOrWhiteSpace(PasswordRegistracija) && !String.IsNullOrWhiteSpace(Potvrda) && !String.IsNullOrWhiteSpace(Naziv) && !String.IsNullOrWhiteSpace(Email))
             {
                 if(PasswordRegistracija.Equals(Potvrda))
@@ -124,7 +125,7 @@ namespace Mreza.ViewModel
                     {
                         Korisnici NoviKorisnik = new Korisnici
                         {
-                            id = Convert.ToString(BatNet.Korisnici.Last().ID + 1),
+                            id = Convert.ToString(sviKorisnici.Max(x => Convert.ToInt32(x.id)) + 1),
                             email = Email,
                             username = UsernameRegistracija,
                             sifra = BatNet.CreateMD5(PasswordRegistracija),
@@ -132,7 +133,8 @@ namespace Mreza.ViewModel
                             naziv = Naziv,
                             datum = Datum.Date
                         };
-                        userTableObj.InsertAsync(NoviKorisnik);
+                        System.Diagnostics.Debug.WriteLine(Convert.ToInt32(sviKorisnici.Max(x => x.id)) + 1);
+                        await userTableObj.InsertAsync(NoviKorisnik);
                      
                         if (PrivatanProfil)
                         {

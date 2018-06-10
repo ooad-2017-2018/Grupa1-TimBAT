@@ -1,25 +1,279 @@
 ﻿@{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Dobrodošli " + ASPBatNetModel.Username;
 }
+@using ASPBatNet.Models;
 
-<div class="container">
-    <h1 id="greetingMessage">Dobrodošli na BatNet!</h1>
-    <div id="podaci">
-        @using (Html.BeginForm("Profil", "Home", FormMethod.Post))
-        {
-            <input name="username" placeholder="Username" type="text" id="username" class="form-control input-lg" /> <br />
-            <input name="password" placeholder="Password" type="password" id="password" class="form-control input-lg" /> <br />
-            <input type="submit" id="login" class="btn btn-info" value="Prijavi se" />
-        }
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("BatNet", "Index", "Home", null, new { @class = "navbar-brand" });
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <div class="col-md-2"></div>
+            <div class="col-sm-4 col-md-4">
+                <form class="navbar-form" role="search">
+                    <div class="input-group" style="height:3.5vh">
+                        <input type="text" class="form-control" placeholder="Pretraži" name="srch-term" id="srch-term" style="height:100%;" />
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit" style="height:100%;"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3">
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="@ASPBatNetModel.Image" style="height: 3.5vh; width: 3.5vh; margin-top:1vh; float:right; border-radius:2vh;" />
+                </a>
+            </div>
+            <div class="col-md-1">
+                <div class="dropdown">
+                    <img src="~/Content/Images/alert.png" class="dropdown-toggle btn" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="height:3.5vh; width:5vh; text-decoration:none; color:white; cursor:pointer; margin-top:1vh; background-color:snow; border-radius:2vh;"><span class="caret"></span></img>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Primjer notifikacije</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div>
+                     <a href="~/Logon.aspx" class="btn btn-danger" style="margin-top:1vh;">Odjavi se</a>
+                </div>
+            </div>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row" style="padding-top:5vh;">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-rounded" id="profilna" src="@ASPBatNetModel.Image" alt="Linus" style="height:30vh" />
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8" style="text-align:center">
+                    <div class="panel" style="margin-top:2vh">
+                        <p>@ASPBatNetModel.Quote</p>
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <button class="btn btn-left btn-profile">
+                        <a href="@ASPBatNetModel.Github_Link" style="color:black; text-decoration:none;">Moji kodovi</a>
+                    </button>
+
+                    <!-- Koji li se retard sjetio ovih sranja Boze... -->
+                    @using (Html.BeginForm("DodajProjekat", "Home", FormMethod.Post))
+                    {
+                        <button type="submit" class="btn btn-right btn-profile">Dodaj projekat</button>
+                    }
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10 panel" style="min-height:40vh; max-height:40vh;">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div style="margin-top:5vh;">
+                            <p>@ASPBatNetModel.Naziv</p>
+                            <p>E-mail: @ASPBatNetModel.Email</p>
+                            <p>Username: @ASPBatNetModel.Username</p>
+                            <p>@ASPBatNetModel.Datum</p>
+                            <p>Ostvareni bodovi: @ASPBatNetModel.Bodovi</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+                <div class="row" style="margin-top:5vh">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div>
+                            <div class="btn btn-left btn-profile" style="display:inline; width:3vh; height: 1.5vh; background-color:lightgray;">
+                                <div class="row" style="opacity:0; font-size:0.5vh;">
+                                    Pomjeri se!
+                                </div>
+                                <div class="row">
+                                    Dodaj CV
+                                </div>
+                                <div class="row">
+                                    <input type="file" style="display:inline; opacity:0; cursor:pointer;" title="Dodaj CV" />
+                                </div>
+
+                            </div>
+                            <button class="btn btn-right btn-profile">Uredi</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+    <div class="row" style="padding-bottom:5vh;">
+        <div class="col-md-6">
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <div class="panel scrollable-panel">
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <h4>Tehnologije</h4>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-5">
+                                <p>C</p>
+                            </div>
+                            <div class="col-lg-5">
+                                <p>Assembly</p>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-5">
+                                <p>BASH</p>
+                            </div>
+                            <div class="col-lg-5">
+                                <p>Git</p>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10 panel scrollable-panel">
+                <div class="projekat" style="visibility: @ASPBatNetModel.Visibility[1]">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div>
+                                <h4>@ASPBatNetModel.ListaProjekata[0].naslov</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <h6>Završio: -</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>Osnivač: @ASPBatNetModel.Naziv</p>
+                        </div>
+                        <div class="col-lg-6"></div>
+                    </div>
+                </div>
+
+                <div class="projekat" style="display:block; visibility: @ASPBatNetModel.Visibility[2]">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div>
+                                <h4>@ASPBatNetModel.ListaProjekata[1].naslov</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <h6>Završio: -</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>Osnivač: @ASPBatNetModel.Naziv</p>
+                        </div>
+                        <div class="col-lg-6"></div>
+                    </div>
+                </div>
+
+                <div class="projekat" style="display:block; visibility: @ASPBatNetModel.Visibility[3]">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div>
+                                <h4>@ASPBatNetModel.ListaProjekata[2].naslov</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <h6>Završio: -</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>Osnivač: @ASPBatNetModel.Naziv</p>
+                        </div>
+                        <div class="col-lg-6"></div>
+                    </div>
+                </div>
+
+                <div class="projekat" style="display:block; visibility: @ASPBatNetModel.Visibility[4]">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div>
+                                <h4>@ASPBatNetModel.ListaProjekata[3].naslov</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <h6>Završio: -</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>Osnivač: @ASPBatNetModel.Naziv</p>
+                        </div>
+                        <div class="col-lg-6"></div>
+                    </div>
+                </div>
+
+                <div class="projekat" style="display:block; visibility: @ASPBatNetModel.Visibility[5]">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div>
+                                <h4>@ASPBatNetModel.ListaProjekata[4].naslov</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <h6>Završio: -</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>Osnivač: @ASPBatNetModel.Naziv</p>
+                        </div>
+                        <div class="col-lg-6"></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
     </div>
 </div>
-
-<script>
-    function redirect() {
-        window.location = "http://localhost:52237/Home/Profil";
-        return false;
-    }
-</script>
-
-
-

@@ -25777,24 +25777,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\teske\\.nuget\\packages\\": {},
+    "C:\\Users\\Ekvinto\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\teske\\Documents\\GitHub\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
+      "projectUniqueName": "D:\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
       "projectName": "Mreza",
-      "projectPath": "D:\\Users\\teske\\Documents\\GitHub\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
-      "packagesPath": "C:\\Users\\teske\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\teske\\Documents\\GitHub\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\obj\\",
+      "projectPath": "D:\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\Mreza.csproj",
+      "packagesPath": "C:\\Users\\Ekvinto\\.nuget\\packages\\",
+      "outputPath": "D:\\Grupa1-TimBAT\\Projekat\\MrezaZaProfesionalnoPovezivanje\\Mreza\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\teske\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ekvinto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
@@ -25803,7 +25803,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "uap10.0.10586": {

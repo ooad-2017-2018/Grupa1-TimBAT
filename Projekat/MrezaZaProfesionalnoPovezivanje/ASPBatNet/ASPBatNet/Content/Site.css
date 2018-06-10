@@ -139,3 +139,8 @@ nav {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+.loginKontrole {
+    width: 30vh !important;
+
+}
