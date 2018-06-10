@@ -101,8 +101,6 @@ namespace Mreza.ViewModel
                     Windows.UI.Xaml.Media.Imaging.BitmapImage img = new Windows.UI.Xaml.Media.Imaging.BitmapImage();
                     img.SetSource(fileStream);
                     PathSlike = Convert.ToString(fileStream);
-                    MessageDialog messageDialog = new MessageDialog(PathSlike);
-                    messageDialog.ShowAsync();
                 }
             }
         }
